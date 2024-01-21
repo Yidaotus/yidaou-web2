@@ -1,0 +1,180 @@
+[
+	{
+		"title": "FullStack",
+		"skills": [
+			{
+				"name": "Vue.js",
+				"level": 3
+			},
+			{
+				"name": "React.js",
+				"level": 3
+			},
+			{
+				"name": "MongoDB",
+				"level": 2
+			},
+			{
+				"name": "MUI",
+				"level": 3
+			},
+			{
+				"name": "TailwindCSS",
+				"level": 3
+			},
+			{
+				"name": "MySQL",
+				"level": 2
+			},
+			{
+				"name": "Express.js",
+				"level": 3
+			},
+			{
+				"name": "TypeScript",
+				"level": 3
+			},
+			{
+				"name": "GraphQL",
+				"level": 2
+			},
+			{
+				"name": "REST",
+				"level": 3
+			},
+			{
+				"name": "Emotion",
+				"level": 2
+			},
+			{
+				"name": "Gatsby",
+				"level": 3
+			}
+		]
+	},
+	{
+		"title": "Serverless",
+		"skills": [
+			{
+				"name": "Netlify",
+				"level": 2
+			},
+			{
+				"name": "Vercel",
+				"level": 2
+			},
+			{
+				"name": "Heroku",
+				"level": 2
+			}
+		]
+	},
+	{
+		"title": "CRM (Salesforce)",
+		"skills": [
+			{
+				"name": "APEX",
+				"level": 3
+			},
+			{
+				"name": "Visualforce",
+				"level": 3
+			},
+			{
+				"name": "Experience Cloud",
+				"level": 2
+			},
+			{
+				"name": "LWC",
+				"level": 2
+			},
+			{
+				"name": "LWR",
+				"level": 2
+			},
+			{
+				"name": "Administration",
+				"level": 3
+			}
+		]
+	},
+	{
+		"title": "Scripting & Other",
+		"skills": [
+			{
+				"name": "Rust",
+				"level": 1
+			},
+			{
+				"name": "C++11",
+				"level": 2
+			},
+			{
+				"name": "Python",
+				"level": 2
+			},
+			{
+				"name": "Bash",
+				"level": 3
+			},
+			{
+				"name": "Java",
+				"level": 3
+			}
+		]
+	},
+	{
+		"title": "DevOPS",
+		"skills": [
+			{
+				"name": "Linux administration",
+				"level": 3
+			},
+			{
+				"name": "Docker",
+				"level": 2
+			},
+			{
+				"name": "Firewall administration (PfSense)",
+				"level": 2
+			},
+			{
+				"name": "JEST",
+				"level": 3
+			},
+			{
+				"name": "Github Actions",
+				"level": 2
+			},
+			{
+				"name": "GIT",
+				"level": 3
+			}
+		]
+	},
+	{
+		"title": "Languages",
+		"skills": [
+			{
+				"name": "German",
+				"level": 3
+			},
+			{
+				"name": "English",
+				"level": 3
+			},
+			{
+				"name": "Japanese",
+				"level": 2
+			},
+			{
+				"name": "Korean",
+				"level": 1
+			},
+			{
+				"name": "Mandarin",
+				"level": 1
+			}
+		]
+	}
+]

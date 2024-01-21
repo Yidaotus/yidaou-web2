@@ -1,0 +1,74 @@
+[
+	{
+		"title": "Berlin",
+		"subtitle": "Quick trip to Berlin",
+		"images": [
+			{
+				"width": 3,
+				"height": 1,
+				"src": "berlin-1.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "berlin-2.jpg"
+			}
+		]
+	},
+	{
+		"title": "Zoo",
+		"subtitle": "Quick trip to the Berlin Zoo",
+		"images": [
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-01.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-02.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-03.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-04.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-05.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-06.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-07.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-08.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-09.jpg"
+			},
+			{
+				"width": 3,
+				"height": 1,
+				"src": "zoo-10.jpg"
+			}
+		]
+	}
+]

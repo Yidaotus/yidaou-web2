@@ -1,0 +1,37 @@
+[
+	{
+		"id": "index",
+		"image": "./images/char_head.png",
+		"content": "./mds/index.md",
+		"reversed": true
+	},
+	{
+		"id": "projects",
+		"image": "./images/char_creative.png",
+		"content": "./mds/projects.md",
+		"reversed": false
+	},
+	{
+		"id": "about",
+		"image": "./images/char_wave.png",
+		"content": "./mds/about.md",
+		"reversed": true
+	},
+	{
+		"id": "personal",
+		"content": "./mds/personal.md",
+		"reversed": true
+	},
+	{
+		"id": "photography",
+		"image": "./images/char_photo.png",
+		"content": "./mds/photography.md",
+		"reversed": true
+	},
+	{
+		"id": "contact",
+		"image": "./images/char_contact.png",
+		"content": "./mds/contact.md",
+		"reversed": false
+	}
+]

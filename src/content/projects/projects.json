@@ -1,0 +1,79 @@
+[
+	{
+		"title": "Obsidian Enhanced Audio Player",
+		"description": "Enhanced Audio Player plugin for obsidian. Part of my plugin suite for language learning in obsidian.",
+		"image": "obs-audio.png",
+		"repo": "https://github.com/Yidaotus/obsidian-enhanced-audio-player",
+		"link": "",
+		"technologies": ["obsidian", "typescript"]
+	},
+	{
+		"title": "Obsidian Language Tools",
+		"description": "A set of utilities for taking language notes in Obsidian. Inclusing an SRS component written in Svelte.",
+		"image": "obs-plugin.png",
+		"repo": "https://github.com/Yidaotus/obsidian-yi-language-tools",
+		"link": "",
+		"technologies": ["obsidian", "svelte", "typescript"]
+	},
+	{
+		"title": "YiLang Marketing Page",
+		"description": "Engaging marketing page for YiLang.",
+		"image": "yi-web.png",
+		"repo": "https://github.com/Yidaotus/yilang-web",
+		"link": "https://yilang-web.yidaou.tech",
+		"technologies": ["nextjs", "react", "framer-motion", "typescript"]
+	},
+	{
+		"title": "YiLang 2.0",
+		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content. A rewrite of YiLang with a more modern stack.",
+		"image": "yilang2.png",
+		"repo": "https://github.com/Yidaotus/YiLang2",
+		"link": "https://yilang.yidaou.tech",
+		"technologies": [
+			"react",
+			"react-query",
+			"chakra",
+			"lexical",
+			"nextjs",
+			"react-hook-form",
+			"typescript",
+			"trpc",
+			"tailwind-css",
+			"postgresql",
+			"prisma"
+		]
+	},
+	{
+		"title": "YiLang",
+		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content.",
+		"image": "editor_preview.png",
+		"repo": "https://github.com/Yidaotus/YiLangClient",
+		"link": "",
+		"technologies": [
+			"react",
+			"react-query",
+			"mui",
+			"slate",
+			"react-hook-form",
+			"typescript",
+			"express",
+			"mongodb"
+		]
+	},
+	{
+		"title": "Yi-8",
+		"description": "A very simple emulator for the CHIP-8 architecture.",
+		"image": "yi8_preview.png",
+		"repo": "https://github.com/Yidaotus/Yi8",
+		"link": null,
+		"technologies": ["typescript"]
+	},
+	{
+		"title": "Homepage",
+		"description": "This very site.",
+		"image": "homepage_preview.png",
+		"repo": "https://github.com/Yidaotus/Homepage",
+		"link": null,
+		"technologies": ["react", "tailwind-css", "gatsby", "netlify"]
+	}
+]
