@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  AnimatePresence,
-  motion,
-  stagger,
-  useAnimate,
-  usePresence,
-} from "framer-motion";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -25,7 +19,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
         ease: "easeOut",
       },
     );
-    safeToRemove?.();
   };
 
   const cardsIn = async () => {

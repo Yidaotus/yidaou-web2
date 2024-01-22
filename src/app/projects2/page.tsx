@@ -51,13 +51,13 @@ export default function Home() {
         <Carousel
           className="h-[400px]"
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
         >
           <CarouselContent className="h-[400px]">
             {projects.map((project) => (
-              <CarouselItem key={project.title}>
+              <CarouselItem key={project.title} className="basis-2/3">
                 <Card
                   className="h-full w-full cursor-pointer group overflow-hidden relative"
                 >

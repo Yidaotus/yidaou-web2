@@ -15,8 +15,8 @@ import {
   CodeIcon,
   EnvelopeOpenIcon,
   GitHubLogoIcon,
-  LetterCaseToggleIcon,
   LinkedInLogoIcon,
+  ThickArrowDownIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import experiences from "../../content/profile/experiences.json";
@@ -25,6 +25,11 @@ import { Fragment } from "react";
 import tech from "../../content/tech.json";
 import Link from "next/link";
 import GridButton from "@/components/ui/GridButton";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 export default function Home() {
   return (

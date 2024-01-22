@@ -1,14 +1,26 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import projects from "../../content/projects/projects.json";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GitHubLogoIcon, Link2Icon } from "@radix-ui/react-icons";
+import {
+  ArrowLeftIcon,
+  DrawingPinFilledIcon,
+  GitHubLogoIcon,
+  Link2Icon,
+} from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
+import GridButton from "@/components/ui/GridButton";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<
@@ -16,11 +28,21 @@ export default function Home() {
   >(null);
 
   return (
-    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4  font-light">
-      <Card className="lg:col-span-1 lg:row-span-1 ">Back</Card>
-      <Card className="lg:col-span-3 lg:row-span-2 ">
+    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-5 lg:gap-4  font-light lg:max-h-[800px]">
+      <div className="col-span-5 lg:col-span-1 lg:row-span-2">
+        <GridButton
+          title="Back"
+          href="/"
+          icon={<ArrowLeftIcon className="w-full h-full" />}
+        />
+      </div>
+      <Card className="col-span-4 lg:col-span-4 lg:row-span-2 ">
         <CardHeader>
-          <CardTitle className="text-muted-foreground">projects</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <DrawingPinFilledIcon className="w-4 h-4" />
+            Projects
+          </CardTitle>
+          <CardDescription>Recent or favorite projects of mine</CardDescription>
         </CardHeader>
         <CardContent className="relative">
           <div className="absolute right-0 lg:right-4 top-1/2 -translate-y-1/2 w-32 z-0">
@@ -47,12 +69,14 @@ export default function Home() {
           </ul>
         </CardContent>
       </Card>
-      <Card className="lg:col-span-1 lg:row-span-1 ">Back</Card>
-      {projects.map((project) => (
+
+      {projects.map((project, i) => (
         <motion.div
           key={project.title}
           layoutId={project.title}
-          className="h-52 lg:row-span-1 lg:col-span-2 z-10"
+          className={`col-span-4 ${i % 2 ? "lg:col-span-2" : "lg:col-span-1"} ${
+            i % 3 ? "lg:row-span-2" : "lg:row-span-1"
+          } z-10 min-h-[100px]`}
         >
           <Card
             onClick={() => setSelectedProject(project)}
@@ -66,7 +90,6 @@ export default function Home() {
             />
             <div className="z-10 px-4 py-2 flex flex-col justify-end h-full w-full">
               <h1 className="text-xl font-bold">{project.title}</h1>
-              <p className="text-lg">{project.description}</p>
             </div>
           </Card>
         </motion.div>
