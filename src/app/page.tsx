@@ -1,3 +1,4 @@
+import DarkModeToggle from "@/components/ui/DarkModeToggle";
 import GridButton from "@/components/ui/GridButton";
 import RecentBlockPostsCard, {
   BlockPostsPlaceHolder,
@@ -5,7 +6,6 @@ import RecentBlockPostsCard, {
 import SpotifyCurrentlyPlaying, {
   PlaceholderPlayer,
 } from "@/components/ui/SpotifyCurrentlyPlaying";
-import SpotifyRecentHits from "@/components/ui/SpotifyRecent";
 import WelcomeBanner from "@/components/ui/WelcomeBanner";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,11 +25,10 @@ import {
   LinkedInLogoIcon,
   PersonIcon,
   RocketIcon,
+  SunIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Suspense } from "react";
-
-const tags = ["javascript", "typescript", "generics", "validations", "yup"];
 
 export default function Home() {
   return (
@@ -73,7 +72,10 @@ export default function Home() {
       </Card>
       <Card className="col-span-2 row-span-1 md:row-span-2 lg:row-span-3 md:col-span-1 lg:col-span-1 relative">
         <CardHeader>
-          <CardTitle className="text-lg">About</CardTitle>
+          <CardTitle className="flex gap-2 items-center">
+            <PersonIcon className="h-4 w-4" />
+            about
+          </CardTitle>
           <CardDescription>A few words about myself</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col space-y-2">
@@ -114,12 +116,16 @@ export default function Home() {
         icon={<IdCardIcon className="w-full h-full" />}
       />
 
-      <GridButton
-        invert
-        title="About"
-        href="/about"
-        icon={<PersonIcon className="w-full h-full" />}
-      />
+      <div className="grid grid-cols-2 grid-rows-1 gap-2">
+        <GridButton
+          invert
+          title=""
+          href="/about"
+          icon={<PersonIcon className="w-full h-full" />}
+        />
+
+        <DarkModeToggle />
+      </div>
 
       <Card className="text-muted-foreground col-span-2 md:col-span-1 row-span-1 grid w-full content-center justify-center h-full">
         © Daniel Voigt 2024

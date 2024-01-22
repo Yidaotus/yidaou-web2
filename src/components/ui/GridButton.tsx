@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Card } from "./card";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 type GridButtonProps = {
   href: string;
@@ -14,9 +13,9 @@ const GridButton = ({ href, title, icon, invert = false }: GridButtonProps) => {
     <Card
       className={`col-span-1 row-span-1 flex items-center justify-center ${
         invert
-          ? "bg-secondary text-secondary-foreground h-full"
-          : "bg-primary hover:border-secondary text-primary-foreground h-full"
-      } relative group overflow-hidden hover:cursor-pointer min-h-[70px]`}
+          ? "bg-secondary text-secondary-foreground "
+          : "bg-primary hover:border-secondary text-primary-foreground "
+      } relative group overflow-hidden hover:cursor-pointer h-full min-h-[70px]`}
     >
       <Link
         href={href}

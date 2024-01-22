@@ -1,7 +1,7 @@
+"use client";
+
 import GridButton from "@/components/ui/GridButton";
-import SpotifyCurrentlyPlaying from "@/components/ui/SpotifyCurrentlyPlaying";
-import WelcomeBanner from "@/components/ui/WelcomeBanner";
-import { Button } from "@/components/ui/button";
+import ShuffleImage from "@/components/ui/ShuffleImage";
 import {
   Card,
   CardContent,
@@ -10,26 +10,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MediumIcon } from "@/components/ui/icons";
-import {
-  CameraIcon,
-  EnvelopeOpenIcon,
-  GitHubLogoIcon,
-  IdCardIcon,
-  LinkedInLogoIcon,
-  PersonIcon,
-  RocketIcon,
-} from "@radix-ui/react-icons";
+import { ArrowLeftIcon, CameraIcon } from "@radix-ui/react-icons";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-
-const tags = ["javascript", "typescript", "generics", "validations", "yup"];
+import { useCallback, useContext, useEffect, useState } from "react";
+//
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function Home() {
+  const [shuffle, setShuffle] = useState(0);
+
+  const updateKeyRandom = useCallback(async () => {
+    await sleep(Math.random() * 10000 + 5000);
+    setShuffle(shuffle + 1);
+  }, [shuffle]);
+
+  useEffect(() => {
+    updateKeyRandom();
+  }, [shuffle]);
+
   return (
-    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
-      <Card className="lg:col-span-2 lg:row-span-1 relative">
+    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
+      <Card className="col-span-4 lg:col-span-2 lg:row-span-1 relative">
         <CardHeader>
-          <CardTitle className="text-muted-foreground">photograhy</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <CameraIcon className="w-4 h-4" />
+            photograhy
+          </CardTitle>
+          <CardDescription>One of my hobbies</CardDescription>
         </CardHeader>
         <CardContent className="relative">
           <div className="absolute right-0 lg:right-4 top-1/2 -translate-y-1/2 w-32 z-0">
@@ -54,60 +62,58 @@ export default function Home() {
           </ul>
         </CardContent>
       </Card>
-      <Card className="lg:row-span-2 lg:col-span-1 relative">
-        <Image
-          src="/photos/01.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+      <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["00.jpg", "01.jpg", "03.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
-      <Card className="lg:row-span-1 lg:col-span-1 relative h-full">
-        <Image
-          src="/photos/13.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["04.jpg", "05.jpg", "08.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
-      <Card className="lg:row-span-2 relative">
-        <Image
-          src="/photos/08.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+      <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["10.jpg", "11.jpg", "13.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
-      <Card className="lg:row-span-1 lg:col-span-1 relative">
-        <Image
-          src="/photos/03.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+
+      <div className="col-span-4 lg:col-span-1 lg:row-span-1  min-h-[100px]">
+        <GridButton
+          title="Back"
+          href="/"
+          icon={<ArrowLeftIcon className="w-full h-full" />}
+        />
+      </div>
+
+      {
+        // <Card className="lg:row-span-1 lg:col-span-1 relative overflow-hidden">
+        //   <ShuffleImage
+        //     images={["14.jpg", "_DSC0959.jpg", "_DSC1013.jpg"]}
+        //     shuffle={shuffle}
+        //   />
+        // </Card>
+      }
+
+      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["01.jpg", "13.jpg", "04.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
-      <Card className="lg:row-span-1 lg:col-span-1 relative">
-        <Image
-          src="/photos/14.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+      <Card className="col-span-4 lg:row-span-1 lg:col-span-2 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["11.jpg", "08.jpg", "01.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
-      <Card className="lg:row-span-1 lg:col-span-2 relative">
-        <Image
-          src="/photos/00.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
-        />
-      </Card>
-      <Card className="lg:row-span-1 lg:col-span-1 relative">
-        <Image
-          src="/photos/_DSC1035.jpg"
-          fill
-          alt="00"
-          className="rounded-[var(--radius)] object-cover"
+      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+        <ShuffleImage
+          images={["08.jpg", "03.jpg", "05.jpg"]}
+          shuffle={shuffle}
         />
       </Card>
     </main>

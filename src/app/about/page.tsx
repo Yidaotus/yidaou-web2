@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ArrowLeftIcon, PlayIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Suspense } from "react";
 
@@ -31,16 +31,16 @@ export default function Home() {
           <CardDescription>About me personally</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[834/908] z-0 overflow-hidden object-center pr-2 md:pt-2">
+          <div className="absolute -right-16 md:right-0 top-0 h-full aspect-[842/998] z-0 overflow-hidden md:pr-2 md:pt-2">
             <Image
               src="/mascot/char_wave.png"
-              height={908}
-              width={834}
+              height={998}
+              width={842}
               alt="Mascot Head"
               className="select-none opacity-25 lg:opacity-50 pointer-events-none object-cover"
             />
           </div>
-          <p className="w-2/3 z-10 relative">
+          <p className="w-[90%] md:w-2/3 z-10 relative">
             A 30-year-old residing and working independently in Düsseldorf as a
             FullStack and Salesforce Software Developer. I've been immersed in
             programming and tinkering for as long as I can remember,
@@ -52,7 +52,9 @@ export default function Home() {
 
       <Card className="col-span-4 lg:col-span-1 lg:row-span-3">
         <CardHeader>
-          <CardTitle className="text-lg">Recent Hits</CardTitle>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <PlayIcon className="w-5 h-5" /> Recent Hits
+          </CardTitle>
           <CardDescription>Hits I recently listened to</CardDescription>
         </CardHeader>
         <CardContent>

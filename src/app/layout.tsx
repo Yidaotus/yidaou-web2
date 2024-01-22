@@ -14,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.className} md:h-screen grid items-center dark`}>{children}</body>
+      <body
+        className={`${GeistSans.className} md:h-screen grid items-center dark transition-colors`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

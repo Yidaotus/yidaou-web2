@@ -10,9 +10,12 @@ import {
 } from "@/components/ui/card";
 import { MediumIcon } from "@/components/ui/icons";
 import {
-    ArrowLeftIcon,
+  ArrowLeftIcon,
+  BackpackIcon,
+  CodeIcon,
   EnvelopeOpenIcon,
   GitHubLogoIcon,
+  LetterCaseToggleIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -33,11 +36,11 @@ export default function Home() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[834/908] z-0 overflow-hidden object-center pr-2 md:pt-2">
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[486/1000] z-0 overflow-hidden object-center pr-2 md:pt-2">
             <Image
-              src="/mascot/char_head.png"
-              height={908}
-              width={834}
+              src="/mascot/char_contact.png"
+              height={1000}
+              width={486}
               alt="Mascot Head"
               className="select-none opacity-25 lg:opacity-50 pointer-events-none object-cover"
             />
@@ -64,9 +67,11 @@ export default function Home() {
         </CardFooter>
       </Card>
 
-      <Card className="col-span-1 row-span-2">
+      <Card className="col-span-4 lg:col-span-1 lg:row-span-2">
         <CardHeader>
-          <CardTitle>Tech I Like</CardTitle>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <CodeIcon className="w-5 h-5" /> Tech I like
+          </CardTitle>
           <CardDescription>Tech I am currently using</CardDescription>
         </CardHeader>
         <CardContent>
@@ -84,7 +89,9 @@ export default function Home() {
 
       <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[520px]">
         <CardHeader>
-          <CardTitle>Experience</CardTitle>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <BackpackIcon className="w-5 h-5" /> Experience
+          </CardTitle>
           <CardDescription>My profesional working experience</CardDescription>
         </CardHeader>
         <ScrollArea className="">
@@ -92,11 +99,11 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] relative">
               {experiences.map((experience) => (
                 <Fragment key={experience.title}>
-                  <CardHeader className="col-span-1 relative">
-                    <div className="hidden lg:block border-l-muted-foreground border-l-2 left-8 top-12 w-2 absolute h-full" />
+                  <div className="hidden lg:block border-l-muted-foreground border-l-2 left-8 top-12 w-2 absolute h-full" />
+                  <CardHeader className="col-span-2 relative">
                     <div className="sticky top-4">
                       <div className="flex">
-                        <div className="hidden lg:block border-muted-foreground border-2 bg-background rounded-full w-4 h-4 relative top-4 left-[1px]" />
+                        <div className="hidden lg:block border-muted-foreground border-2 bg-muted-foreground rounded-full w-4 h-4 relative top-4 left-[1px]" />
                         <div className="flex flex-col">
                           <CardTitle className="text-lg lg:pl-8">
                             {experience.title}
@@ -119,10 +126,13 @@ export default function Home() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="flex flex-col space-y-2 lg:pt-8 col-span-1 relative">
-                    <ul className="list-disc list-inside space-y-2">
+                  <CardContent className="flex flex-col space-y-1  md:pl-20 col-span-2 relative z-10">
+                    <ul className="list-disc list-inside space-y-1">
                       {experience.activities.map((activity) => (
-                        <li className="list-item text-muted-foreground" key={activity}>
+                        <li
+                          className="list-item text-muted-foreground"
+                          key={activity}
+                        >
                           {activity}
                         </li>
                       ))}
@@ -143,7 +153,6 @@ export default function Home() {
           icon={<ArrowLeftIcon className="w-full h-full" />}
         />
       </div>
-
     </main>
   );
 }

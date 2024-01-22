@@ -7,6 +7,7 @@ import Link from "next/link";
 import { clamp } from "framer-motion";
 import { Skeleton } from "./skeleton";
 import { Badge } from "./badge";
+import { BookmarkIcon } from "@radix-ui/react-icons";
 
 const parser: Parser = new Parser();
 
@@ -24,7 +25,10 @@ const getRecentBlogPosts = cache(async (_ts: string) => {
 const BlogPostsPlaceHolder = () => (
   <>
     <CardHeader>
-      <CardTitle className="text-lg">Blog</CardTitle>
+      <CardTitle className="text-lg flex gap-2 items-center">
+        <BookmarkIcon className="h-5 w-5" />
+        Blog
+      </CardTitle>
       <CardDescription className="">Recent Entries</CardDescription>
     </CardHeader>
     <CardContent className="flex flex-col gap-4">
@@ -49,7 +53,10 @@ const RecentBlockPostsCard = async () => {
   return (
     <>
       <CardHeader>
-        <CardTitle className="text-lg">Blog</CardTitle>
+        <CardTitle className="flex gap-2 items-center">
+          <BookmarkIcon className="h-4 w-4" />
+          blog
+        </CardTitle>
         <CardDescription className="">Recent Entries</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col space-y-2">
