@@ -33,7 +33,7 @@ export default function Home() {
             />
           </div>
           <p className="text-xl pr-24 z-10 relative">
-            Here are some recent projects I've been working on and their
+            Here are some recent projects Ive been working on and their
             respective source codes. I like to test out new libraries and
             technologies, but my go to tech stack is:
           </p>
@@ -52,7 +52,7 @@ export default function Home() {
         <motion.div
           key={project.title}
           layoutId={project.title}
-          className="h-52 relative lg:row-span-1 lg:col-span-2 z-10"
+          className="h-52 lg:row-span-1 lg:col-span-2 z-10"
         >
           <Card
             onClick={() => setSelectedProject(project)}
@@ -64,7 +64,7 @@ export default function Home() {
               src={`/projects/${project.image}`}
               alt={project.title}
             />
-            <div className="relative z-10 px-4 py-2 flex flex-col justify-end h-full w-full">
+            <div className="z-10 px-4 py-2 flex flex-col justify-end h-full w-full">
               <h1 className="text-xl font-bold">{project.title}</h1>
               <p className="text-lg">{project.description}</p>
             </div>
@@ -72,13 +72,13 @@ export default function Home() {
         </motion.div>
       ))}
       <AnimatePresence>
-        <div className="fixed h-[90vh] w-[90vw] py-4 px-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[900px] md:h-[500px] z-40">
-          {selectedProject && (
+        {selectedProject && (
+          <motion.div className="fixed h-[90vh] w-[90vw] py-4 px-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[900px] md:h-[500px] z-40">
             <motion.div
               layoutId={selectedProject.title}
-              className="w-full h-full relative z-50"
+              className="w-full h-full z-50"
             >
-              <Card className="h-full w-full">
+              <Card className="h-full w-full opacity-100">
                 <div
                   className="bg-cover bg-center bg-opacity-10 bg-no-repeat h-2/3 w-full rounded-t-lg opacity-80"
                   style={{
@@ -134,8 +134,8 @@ export default function Home() {
                 </Tabs>
               </Card>
             </motion.div>
-          )}
-        </div>
+          </motion.div>
+        )}
       </AnimatePresence>
       <AnimatePresence>
         {selectedProject && (

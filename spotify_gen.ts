@@ -59,7 +59,7 @@ fastify.get("/callback", async function (req, reply) {
 
 fastify.get("/login", function (_req, reply) {
   const state = crypto.randomBytes(16).toString("hex");
-  const scope = "user-read-currently-playing user-read-playback-state";
+  const scope = "user-read-currently-playing user-read-playback-state user-read-recently-played";
 
   reply.redirect(
     "https://accounts.spotify.com/authorize?" +

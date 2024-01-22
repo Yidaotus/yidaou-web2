@@ -5,6 +5,7 @@ import RecentBlockPostsCard, {
 import SpotifyCurrentlyPlaying, {
   PlaceholderPlayer,
 } from "@/components/ui/SpotifyCurrentlyPlaying";
+import SpotifyRecentHits from "@/components/ui/SpotifyRecent";
 import WelcomeBanner from "@/components/ui/WelcomeBanner";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,6 +23,7 @@ import {
   GitHubLogoIcon,
   IdCardIcon,
   LinkedInLogoIcon,
+  PersonIcon,
   RocketIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -31,7 +33,7 @@ const tags = ["javascript", "typescript", "generics", "validations", "yup"];
 
 export default function Home() {
   return (
-    <main className="text-white m-auto p-2 grid gap-2 grid-cols-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
+    <main className="text-white m-auto p-2 grid gap-2 grid-cols-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4 lg:max-h-[800px]">
       <Card className="col-span-2 row-span-2 md:col-span-4 lg:col-span-3 md:row-span-1 lg:row-span-1 relative">
         <CardHeader>
           <CardTitle>
@@ -49,9 +51,9 @@ export default function Home() {
             />
           </div>
           <p className="text-xl pr-24 z-10 relative">
-            I'm <span className="font-bold">Daniel</span> 30 years old living
-            and working in Düsseldorf as an independent Full Stack and
-            Salesforce Software Developer.
+            Im <span className="font-bold">Daniel</span> 30 years old living and
+            working in Düsseldorf as an independent Full Stack and Salesforce
+            Software Developer.
           </p>
         </CardContent>
         <CardFooter className="flex space-x-4">
@@ -69,20 +71,20 @@ export default function Home() {
           </Button>
         </CardFooter>
       </Card>
-      <Card className="col-span-2 row-span-1 md:row-span-2 lg:row-span-4 md:col-span-1 lg:col-span-1 relative">
+      <Card className="col-span-2 row-span-1 md:row-span-2 lg:row-span-3 md:col-span-1 lg:col-span-1 relative">
         <CardHeader>
           <CardTitle className="text-lg">About</CardTitle>
+          <CardDescription>A few words about myself</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col space-y-2">
           <p className="">
-            Programming and tinkering since I can remember, always trying to
-            learn something new. Rust fan, music enthusiast and polyglot. I
-            build applications with my favorite tech:
+            Music enthusiast, polyglot and developer. I build applications with
+            my favorite tech:
           </p>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside text-muted-foreground">
             <li>Next.js</li>
             <li>TypeScript</li>
-            <li>React - Vue</li>
+            <li>React / Vue</li>
             <li>Rust</li>
             <li>PostgreSQL / MongoDB</li>
             <li>Vercel / Netlify / Supabase</li>
@@ -107,11 +109,19 @@ export default function Home() {
         icon={<CameraIcon className="w-full h-full" />}
       />
       <GridButton
-        title="Experience & CV"
+        title="Experience"
         href="/experience"
         icon={<IdCardIcon className="w-full h-full" />}
       />
-      <Card className="text-muted-foreground col-span-1 row-span-1 grid w-full content-center justify-center h-full">
+
+      <GridButton
+        invert
+        title="About"
+        href="/about"
+        icon={<PersonIcon className="w-full h-full" />}
+      />
+
+      <Card className="text-muted-foreground col-span-2 md:col-span-1 row-span-1 grid w-full content-center justify-center h-full">
         © Daniel Voigt 2024
       </Card>
       <Card className="col-span-2 row-span-1 lg:col-span-3 lg:row-span-2">

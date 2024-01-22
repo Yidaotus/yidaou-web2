@@ -93,6 +93,7 @@ fastify.get("/callback", function (req, reply) {
                 case 3:
                     res_data = _a.sent();
                     console.log(res_data.refresh_token);
+                    process.exit();
                     _a.label = 4;
                 case 4: return [2 /*return*/];
             }
@@ -101,7 +102,7 @@ fastify.get("/callback", function (req, reply) {
 });
 fastify.get("/login", function (_req, reply) {
     var state = crypto.randomBytes(16).toString("hex");
-    var scope = "user-read-currently-playing user-read-playback-state";
+    var scope = "user-read-currently-playing user-read-playback-state user-read-recently-played";
     reply.redirect("https://accounts.spotify.com/authorize?" +
         querystring.stringify({
             response_type: "code",

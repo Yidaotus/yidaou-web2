@@ -3,120 +3,120 @@
 		"techId": "svelte",
 		"name": "Svelte",
 		"link": "svelte.dev",
-		"icon": "./icons/svelte.svg"
+		"icon": "/techicons/svelte.svg"
 	},
 	{
 		"techId": "obsidian",
 		"name": "Obsidian",
 		"link": "https://obsidian.md/",
-		"icon": "./icons/obsidian.svg"
+		"icon": "/techicons/obsidian.svg"
 	},
 	{
 		"techId": "prisma",
 		"name": "Prisma",
 		"link": "https://prisma.io",
-		"icon": "./icons/prisma.svg"
+		"icon": "/techicons/prisma.svg"
 	},
 	{
 		"techId": "postgresql",
 		"name": "PostgreSQL",
 		"link": "https://www.postgresql.org/",
-		"icon": "./icons/postgresql.svg"
+		"icon": "/techicons/postgresql.svg"
 	},
 	{
 		"techId": "trpc",
 		"name": "tRPC",
 		"link": "https://trpc.io/",
-		"icon": "./icons/trpc.svg"
+		"icon": "/techicons/trpc.svg"
 	},
 	{
 		"techId": "lexical",
 		"name": "Lexical",
 		"link": "https://lexical.dev/",
-		"icon": "./icons/lexical.svg"
+		"icon": "/techicons/lexical-icon.svg"
 	},
 	{
 		"techId": "chakra",
 		"name": "Chakra",
 		"link": "https://chakra-ui.com/",
-		"icon": "./icons/chakra.svg"
+		"icon": "/techicons/chakra.svg"
 	},
 	{
 		"techId": "nextjs",
 		"name": "Next.js",
 		"link": "https://nextjs.org/",
-		"icon": "./icons/next-js.svg"
+		"icon": "/techicons/next-js.svg"
 	},
 	{
 		"techId": "framer-motion",
 		"name": "Framer Motion",
 		"link": "framer.com",
-		"icon": "./icons/framer-motion.svg"
+		"icon": "/techicons/framer-motion.svg"
 	},
 	{
 		"techId": "react",
 		"name": "React",
 		"link": "https://reactjs.org/",
-		"icon": "./icons/react.svg"
+		"icon": "/techicons/react.svg"
 	},
 	{
 		"techId": "react-query",
 		"name": "React Query",
 		"link": "https://react-query.tanstack.com/",
-		"icon": "./icons/react-query.svg"
+		"icon": "/techicons/react-query.svg"
 	},
 	{
 		"techId": "mui",
 		"name": "Mui",
 		"link": "https://mui.com/",
-		"icon": "./icons/mui.svg"
+		"icon": "/techicons/mui.svg"
 	},
 	{
 		"techId": "slate",
 		"name": "Slate",
 		"link": "https://www.slatejs.org/",
-		"icon": "./icons/slatejs.png"
+		"icon": "/techicons/slatejs.png"
 	},
 	{
 		"techId": "react-hook-form",
 		"name": "React Hook Form",
 		"link": "https://react-hook-form.com/",
-		"icon": "./icons/react-hook-form.svg"
+		"icon": "/techicons/react-hook-form.svg"
 	},
 	{
 		"techId": "typescript",
 		"name": "Typescript",
 		"link": "https://www.typescriptlang.org/",
-		"icon": "./icons/typescript.svg"
+		"icon": "/techicons/typescript.svg"
 	},
 	{
 		"techId": "express",
 		"name": "Express",
 		"link": "https://expressjs.com/",
-		"icon": "./icons/express.svg"
+		"icon": "/techicons/express.svg"
 	},
 	{
 		"techId": "mongodb",
 		"name": "MongoDB",
 		"link": "https://www.mongodb.com/",
-		"icon": "./icons/mongodb.svg"
+		"icon": "/techicons/mongodb.svg"
 	},
 	{
 		"techId": "tailwind-css",
 		"name": "TailwindCSS",
 		"link": "https://tailwindcss.com/",
-		"icon": "./icons/tailwindcss.svg"
+		"icon": "/techicons/tailwindcss.svg"
 	},
 	{
 		"techId": "gatsby",
 		"name": "Gatsby",
 		"link": "https://www.gatsbyjs.com/",
-		"icon": "./icons/gatsby.svg"
+		"icon": "/techicons/gatsby.svg"
 	},
 	{
 		"techId": "netlify",
 		"name": "Netlify",
 		"link": "https://www.netlify.com/",
-		"icon": "./icons/netlify.svg"
+		"icon": "/techicons/netlify.svg"
 	}
 ]

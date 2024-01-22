@@ -1,43 +1,55 @@
 [
-	{
-		"title": "Technical Consultant",
-		"company": "Self employed",
-		"startDate": "2021-08-01",
-		"endDate": null,
-		"activities": ["Salesforce technical consulting"]
-	},
-	{
-		"title": "Lead Software Developer",
-		"company": "Kesselheld GmbH",
-		"startDate": "2021-04-01",
-		"endDate": null,
-		"activities": [
-			"Responsible for conceiving and developing software solutions based on Typescript, React, NodeJS, PostgreSQL, Java, APEX",
-			"Conception and implementation of the provision of software solutions based on a serverless architecture including CI/CD pipeline",
-			"Support in the introduction and administration of Salesforce as well as implementation of extensions based on LWC, LWR, Apex, and Visualforce",
-			"Support in the conception and responsibility for the implementation of business processes in Salesforce using APEX and Flow Builder",
-			"Integration of a Salesforce system into a SAP PI PO partner network and provision of various REST APIs",
-			"Introduction of agile project management based on SCRUM",
-			"Administration and maintenance of GIT repositories and Linux servers",
-			"Code reviews and guidance of interns and student workers",
-			"Development and conduct of internal trainings and workshops (e.g. on Git, test frameworks, agile project management)"
-		]
-	},
-	{
-		"title": "Junior Software Developer",
-		"company": "Kesselheld GmbH",
-		"startDate": "2018-08-01",
-		"endDate": "2021-05-30",
-		"activities": [
-			"Fullstack development in the languages: Typescript/NodeJS/VueJS, PHP, Java, APEX",
-			"Integration, administration, and maintenance of MySQL databases",
-			"Administration and maintenance of Git repositories",
-			"Code reviews and participation in release and development management",
-			"Independent rollout of hotfixes and smaller releases",
-			"Participation in and partial leadership of Scrum meetings",
-			"Independent coordination and implementation of development sub-projects in cross-functional projects",
-			"Support and guidance of interns and student workers",
-			"First and second level support"
-		]
-	}
+  {
+    "title": "Independent Web Developer",
+    "company": "Self employed",
+    "startDate": "2023-03-01",
+    "endDate": null,
+    "activities": [
+      "Developing dynamic and responsive web applications using modern FullStack technologies.",
+      "Collaborating with clients to understand their requirements and delivering tailor-made solutions.",
+      "Balancing technical expertise with a creative touch to deliver visually appealing and functional user interfaces.",
+      "Elevating brand identity through meticulously crafted websites, integrating dynamic animations seamlessly into the user interface for an engaging and memorable user experience that leaves a lasting brand impression."
+    ]
+  },
+  {
+    "title": "Technical Consultant",
+    "company": "Self employed",
+    "startDate": "2021-08-01",
+    "endDate": "2023-03-01",
+    "activities": ["Salesforce technical consulting"]
+  },
+  {
+    "title": "Lead Software Developer",
+    "company": "Kesselheld GmbH",
+    "startDate": "2021-04-01",
+    "endDate": "2023-03-01",
+    "activities": [
+      "Responsible for conceiving and developing software solutions based on Typescript, React, NodeJS, PostgreSQL, Java, APEX",
+      "Conception and implementation of the provision of software solutions based on a serverless architecture including CI/CD pipeline",
+      "Support in the introduction and administration of Salesforce as well as implementation of extensions based on LWC, LWR, Apex, and Visualforce",
+      "Support in the conception and responsibility for the implementation of business processes in Salesforce using APEX and Flow Builder",
+      "Integration of a Salesforce system into a SAP PI PO partner network and provision of various REST APIs",
+      "Introduction of agile project management based on SCRUM",
+      "Administration and maintenance of GIT repositories and Linux servers",
+      "Code reviews and guidance of interns and student workers",
+      "Development and conduct of internal trainings and workshops (e.g. on Git, test frameworks, agile project management)"
+    ]
+  },
+  {
+    "title": "Junior Software Developer",
+    "company": "Kesselheld GmbH",
+    "startDate": "2018-08-01",
+    "endDate": "2021-05-30",
+    "activities": [
+      "Fullstack development in the languages: Typescript/NodeJS/VueJS, PHP, Java, APEX",
+      "Integration, administration, and maintenance of MySQL databases",
+      "Administration and maintenance of Git repositories",
+      "Code reviews and participation in release and development management",
+      "Independent rollout of hotfixes and smaller releases",
+      "Participation in and partial leadership of Scrum meetings",
+      "Independent coordination and implementation of development sub-projects in cross-functional projects",
+      "Support and guidance of interns and student workers",
+      "First and second level support"
+    ]
+  }
 ]

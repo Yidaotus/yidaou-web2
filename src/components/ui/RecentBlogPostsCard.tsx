@@ -12,17 +12,16 @@ const parser: Parser = new Parser();
 
 const BLOG_RSS_URL = "https://yidaotus.medium.com/feed";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+// const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const getRecentBlogPosts = cache(async (_ts: string) => {
-  await sleep(3000);
   const blogPostReq = await fetch(BLOG_RSS_URL);
   const blogPostData = await blogPostReq.text();
   const blogPosts = await parser.parseString(blogPostData);
   return blogPosts;
 });
 
-const BlockPostsPlaceHolder = () => (
+const BlogPostsPlaceHolder = () => (
   <>
     <CardHeader>
       <CardTitle className="text-lg">Blog</CardTitle>
@@ -92,4 +91,4 @@ const RecentBlockPostsCard = async () => {
 };
 
 export default RecentBlockPostsCard;
-export { BlockPostsPlaceHolder };
+export { BlogPostsPlaceHolder as BlockPostsPlaceHolder };
