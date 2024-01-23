@@ -7,12 +7,12 @@ import { getCurrentlyPlaying } from "@/lib/spotify";
 const PlayerOffline = () => {
   return (
     <div className="relative overflow-hidden h-full min-h-[75px]">
-      <div className="relative z-10 pl-4 flex h-full gap-2 items-start justify-center flex-col bg-[#00000050] text-muted-foreground">
+      <div className="relative z-10 pl-4 flex h-full gap-2 items-start justify-center flex-col bg-secondary text-muted-foreground">
         <p className="font-normal overflow-hidden text-ellipsis whitespace-nowrap w-2/3 group-hover:text-gray-200">
           Playback paused
         </p>
       </div>
-      <div className="absolute right-1 -translate-y-1/2 top-1/2 h-12 text-white pr-2">
+      <div className="absolute right-1 -translate-y-1/2 top-1/2 h-12 pr-2 text-muted-foreground z-10">
         <MoonIcon className="h-12 w-12" />
       </div>
     </div>
@@ -40,7 +40,7 @@ const SpotifyCurrentlyPlaying: React.FC = async () => {
     return <PlaceholderPlayer />;
   }
 
-  if (typeof track === "string") {
+  if (typeof track === 'number') {
     return <PlayerOffline />;
   }
 

@@ -6,18 +6,19 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { sleep } from "@/lib/utils";
 import { ArrowLeftIcon, CameraIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import BlurImg from "@/components/ui/BlurImg";
 //
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<null | string>(null);
   const [shuffle, setShuffle] = useState(0);
 
   const updateKeyRandom = useCallback(async () => {
@@ -63,19 +64,24 @@ export default function Home() {
         </CardContent>
       </Card>
       <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
-        <ShuffleImage
-          images={["00.jpg", "01.jpg", "03.jpg"]}
-          shuffle={shuffle}
-        />
+        <motion.div layoutId="00.jpg">
+          <ShuffleImage
+            onClick={(img) => setSelectedImage(img)}
+            images={["00.jpg", "01.jpg", "03.jpg"]}
+            shuffle={shuffle}
+          />
+        </motion.div>
       </Card>
       <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
           images={["04.jpg", "05.jpg", "08.jpg"]}
           shuffle={shuffle}
         />
       </Card>
       <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
           images={["10.jpg", "11.jpg", "13.jpg"]}
           shuffle={shuffle}
         />
@@ -100,22 +106,60 @@ export default function Home() {
 
       <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
           images={["01.jpg", "13.jpg", "04.jpg"]}
           shuffle={shuffle}
         />
       </Card>
       <Card className="col-span-4 lg:row-span-1 lg:col-span-2 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
           images={["11.jpg", "08.jpg", "01.jpg"]}
           shuffle={shuffle}
         />
       </Card>
       <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
           images={["08.jpg", "03.jpg", "05.jpg"]}
           shuffle={shuffle}
         />
       </Card>
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            onClick={() => setSelectedImage(null)}
+            initial={{ opacity: 0, scale: 0.8, y: "-50%", x: "-50%" }}
+            animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
+            exit={{ opacity: 0, scale: 0.8, y: "-50%", x: "-50%" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="fixed h-full w-full md:h-[50vh] md:w-[50vw] top-1/2 left-1/2 z-50 rounded"
+          >
+            <Image
+              priority
+              fill
+              alt={selectedImage}
+              src={`/photos/${selectedImage}`}
+              className="object-contain md:object-contain object-center rounded"
+              sizes="50vw"
+              placeholder="blur"
+              blurDataURL={"data:image/jpeg;base64," + BlurImg}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            onClick={() => setSelectedImage(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="fixed h-screen w-screen left-0 top-0 z-40 bg-opacity-50 bg-black"
+          />
+        )}
+      </AnimatePresence>
     </main>
   );
 }

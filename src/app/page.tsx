@@ -1,8 +1,10 @@
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 import GridButton from "@/components/ui/GridButton";
+import PhotoButton from "@/components/ui/PhotoButton";
 import RecentBlockPostsCard, {
   BlockPostsPlaceHolder,
 } from "@/components/ui/RecentBlogPostsCard";
+import ShuffleImage from "@/components/ui/ShuffleImage";
 import SpotifyCurrentlyPlaying, {
   PlaceholderPlayer,
 } from "@/components/ui/SpotifyCurrentlyPlaying";
@@ -17,6 +19,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MediumIcon } from "@/components/ui/icons";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import {
   CameraIcon,
   EnvelopeOpenIcon,
@@ -68,9 +76,14 @@ export default function Home() {
           <Button variant="outline" size="logo">
             <EnvelopeOpenIcon className="h-6 w-6" />
           </Button>
+
+          <Button variant="outline" size="logo" aria-label="Download CV" title="Download my CV">
+            <IdCardIcon className="h-6 w-6" />
+          </Button>
         </CardFooter>
       </Card>
-      <Card className="col-span-2 row-span-1 md:row-span-2 lg:row-span-3 md:col-span-1 lg:col-span-1 relative">
+
+      <Card className="col-span-2 row-span-1 md:row-span-2 md:col-span-2 lg:row-span-3 lg:col-span-1 relative">
         <CardHeader>
           <CardTitle className="flex gap-2 items-center">
             <PersonIcon className="h-4 w-4" />
@@ -94,11 +107,13 @@ export default function Home() {
           </ul>
         </CardContent>
       </Card>
-      <Card className="col-span-2 row-span-1 md:col-span-3 lg:col-span-2 md:row-span-1 lg:row-span-3 relative">
+
+      <Card className="col-span-2 row-span-1 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-3 relative">
         <Suspense fallback={<BlockPostsPlaceHolder />}>
           <RecentBlockPostsCard />
         </Suspense>
       </Card>
+
       <GridButton
         title="Projects"
         href="/projects"
@@ -106,9 +121,9 @@ export default function Home() {
       />
       <GridButton
         invert
-        title="Photography"
-        href="/photography"
-        icon={<CameraIcon className="w-full h-full" />}
+        title="About"
+        href="/about"
+        icon={<PersonIcon className="w-full h-full" />}
       />
       <GridButton
         title="Experience"
@@ -130,9 +145,10 @@ export default function Home() {
       <Card className="text-muted-foreground col-span-2 md:col-span-1 row-span-1 grid w-full content-center justify-center h-full">
         © Daniel Voigt 2024
       </Card>
-      <Card className="col-span-2 row-span-1 lg:col-span-3 lg:row-span-2">
-        3
+      <Card className="col-span-2 row-span-1 md:row-span-2 lg:col-span-2 lg:row-span-2 overflow-hidden">
+        <PhotoButton />
       </Card>
+      <Card className="row-span-2 col-span-1 md:row-span-2">lol</Card>
       <div className="row-span-1 col-span-2 md:col-span-1">
         <Card className="relative overflow-hidden h-full">
           <Suspense fallback={<PlaceholderPlayer />}>

@@ -74,12 +74,8 @@ const getAccessToken = async () => {
   return token_data.access_token;
 };
 
-const getRecentHits = async (limit: number) => {
-  const token = await getAccessToken();
-  if (!token) {
-    return null;
-  }
-
+const getRecentHitsFetcher = async (token: string) => {
+  const limit = 5;
   const recentOptions = {
     url: "https://api.spotify.com/v1/me/player/recently-played",
     headers: {
@@ -96,30 +92,19 @@ const getRecentHits = async (limit: number) => {
     next: { revalidate: 3600 },
   });
 
-  if (response.status === 401) {
-    revalidateTag(TOKEN_CACHE_TAG);
-    return null;
+  if (response.status !== 200) {
+    return response.status;
   }
 
   let recent_data = null;
   console.debug(response.status);
-  if (response.status === 200) {
-    const res_data = await response.json();
-    recent_data = recent_schema.parse(res_data);
-  }
-  if (response.status === 204) {
-    return "offline";
-  }
+  const res_data = await response.json();
+  recent_data = recent_schema.parse(res_data);
 
   return recent_data;
 };
 
-const getCurrentlyPlaying = async () => {
-  const token = await getAccessToken();
-  if (!token) {
-    return null;
-  }
-
+const getCurrentlyPlayingFetcher = async (token: string) => {
   const playingOptions = {
     url: "https://api.spotify.com/v1/me/player/currently-playing",
     headers: {
@@ -132,22 +117,45 @@ const getCurrentlyPlaying = async () => {
     next: { revalidate: 3600 },
   });
 
-  if (response.status === 401) {
-    revalidateTag(TOKEN_CACHE_TAG);
-    return null;
+  if (response.status !== 200) {
+    return response.status;
   }
 
   let playing_data = null;
-  console.debug(response.status);
-  if (response.status === 200) {
-    const res_data = await response.json();
-    playing_data = playing_schema.parse(res_data);
-  }
-  if (response.status === 204) {
-    return "offline";
-  }
+  const res_data = await response.json();
+  playing_data = playing_schema.parse(res_data);
 
   return playing_data;
 };
+
+const callWithTokenRevalidation =
+  <T>(
+    f: (token: string) => Promise<T | number>,
+    revalidateCall: boolean = false,
+  ) =>
+  async (): Promise<T | number> => {
+    const token = await getAccessToken();
+    if (!token) {
+      return 404;
+    }
+
+    const status = await f(token);
+
+    if (typeof status === "number") {
+      if (status === 401) {
+        revalidateTag(TOKEN_CACHE_TAG);
+        if (!revalidateCall) {
+          return callWithTokenRevalidation(f, true)();
+        }
+      }
+    }
+
+    return status;
+  };
+
+const getCurrentlyPlaying = callWithTokenRevalidation(
+  getCurrentlyPlayingFetcher,
+);
+const getRecentHits = callWithTokenRevalidation(getRecentHitsFetcher);
 
 export { getAccessToken, getCurrentlyPlaying, getRecentHits };

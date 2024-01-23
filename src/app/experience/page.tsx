@@ -13,6 +13,7 @@ import {
   ArrowLeftIcon,
   BackpackIcon,
   CodeIcon,
+  DownloadIcon,
   EnvelopeOpenIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
@@ -92,12 +93,21 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[520px]">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
-            <BackpackIcon className="w-5 h-5" /> Experience
-          </CardTitle>
-          <CardDescription>My profesional working experience</CardDescription>
+      <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[70vh] md:h-[520px]">
+        <CardHeader className="flex flex-row justify-between">
+          <div>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <BackpackIcon className="w-5 h-5" /> Experience
+            </CardTitle>
+            <CardDescription>My profesional working experience</CardDescription>
+          </div>
+          <div className="ml-auto">
+            <Button variant="outline" className="ml-auto">
+              <a href="/cv.pdf" download="cv.pdf" className="ml-auto">
+                <DownloadIcon className="w-5 h-5" />
+              </a>
+            </Button>
+          </div>
         </CardHeader>
         <ScrollArea className="">
           <div className="flex gap-2 pr-4">

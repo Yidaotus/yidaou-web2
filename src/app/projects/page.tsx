@@ -28,15 +28,15 @@ export default function Home() {
   >(null);
 
   return (
-    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-5 lg:gap-4  font-light lg:max-h-[800px]">
-      <div className="col-span-5 lg:col-span-1 lg:row-span-2">
+    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4  font-light lg:max-h-[800px]">
+      <div className="col-span-4 lg:col-span-1 lg:row-span-2">
         <GridButton
           title="Back"
           href="/"
           icon={<ArrowLeftIcon className="w-full h-full" />}
         />
       </div>
-      <Card className="col-span-4 lg:col-span-4 lg:row-span-2 ">
+      <Card className="col-span-4 lg:col-span-2 lg:row-span-2 ">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <DrawingPinFilledIcon className="w-4 h-4" />
@@ -74,9 +74,7 @@ export default function Home() {
         <motion.div
           key={project.title}
           layoutId={project.title}
-          className={`col-span-4 ${i % 2 ? "lg:col-span-2" : "lg:col-span-1"} ${
-            i % 3 ? "lg:row-span-2" : "lg:row-span-1"
-          } z-10 min-h-[100px]`}
+          className={`col-span-2 z-10 min-h-[100px]`}
         >
           <Card
             onClick={() => setSelectedProject(project)}
@@ -95,8 +93,13 @@ export default function Home() {
         </motion.div>
       ))}
       <AnimatePresence>
-        {selectedProject && (
-          <motion.div className="fixed h-[90vh] w-[90vw] py-4 px-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[900px] md:h-[500px] z-40">
+        <div
+          key="viewcontainer"
+          className={`fixed h-[90vh] w-screen py-4 px-4 top-1/2 left-0 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 md:w-[900px] md:h-[500px] z-40 ${
+            selectedProject ? "block" : "hidden"
+          }`}
+        >
+          {selectedProject && (
             <motion.div
               layoutId={selectedProject.title}
               className="w-full h-full z-50"
@@ -157,8 +160,8 @@ export default function Home() {
                 </Tabs>
               </Card>
             </motion.div>
-          </motion.div>
-        )}
+          )}
+        </div>
       </AnimatePresence>
       <AnimatePresence>
         {selectedProject && (

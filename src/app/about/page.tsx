@@ -42,7 +42,7 @@ export default function Home() {
           </div>
           <p className="w-[90%] md:w-2/3 z-10 relative">
             A 30-year-old residing and working independently in Düsseldorf as a
-            FullStack and Salesforce Software Developer. I've been immersed in
+            FullStack and Salesforce Software Developer. I&apos;ve been immersed in
             programming and tinkering for as long as I can remember,
             consistently seeking to acquire new skills. A devoted Rust
             enthusiast, music lover, and polyglot.
@@ -68,13 +68,13 @@ export default function Home() {
         <CardHeader>
           <CardTitle className="text-lg">👨‍💻 Software Developer</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col space-y-2">
+        <CardContent className="flex flex-col space-y-2 text-muted-foreground">
           <p className="">
-            Software development isn't just a job for me; it's my greatest
+            Software development isn&apos;t just a job for me; it&apos;s my greatest
             passion. I absolutely love creating things, and in the world of
             software development, there are no fixed boundaries to confine my
-            creativity. That's what I find most exciting about this field, and
-            the fact that there's always something new to learn makes it even
+            creativity. That&apos;s what I find most exciting about this field, and
+            the fact that there&apos;s always something new to learn makes it even
             more fulfilling.
           </p>
         </CardContent>
@@ -84,10 +84,10 @@ export default function Home() {
         <CardHeader>
           <CardTitle className="text-lg">💬 Language Enthusiast</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col space-y-2">
+        <CardContent className="flex flex-col space-y-2 text-muted-foreground">
           <p className="">
             Language has opened doors for me into realms of entertainment,
-            friendships, and cultures I didn't even know existed. Experiencing
+            friendships, and cultures I didn&apos;t even know existed. Experiencing
             how even a modest grasp of a language can broaden my horizons has
             left me hooked.
           </p>
@@ -98,7 +98,7 @@ export default function Home() {
         <CardHeader>
           <CardTitle className="text-lg">🎸 Musician</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col space-y-2">
+        <CardContent className="flex flex-col space-y-2 text-muted-foreground">
           <p className="">
             I play the guitar, particularly favoring fingerstyle, and have
             proficiency in piano. I aim to incorporate saxophone into my musical
