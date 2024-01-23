@@ -114,7 +114,7 @@ const getCurrentlyPlayingFetcher = async (token: string) => {
   const response = await fetch(playingOptions.url, {
     method: "get",
     headers: playingOptions.headers,
-    next: { revalidate: 3600 },
+    cache: "no-cache",
   });
 
   if (response.status !== 200) {
