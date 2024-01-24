@@ -74,8 +74,7 @@ const getAccessToken = async () => {
   return token_data.access_token;
 };
 
-const getRecentHitsFetcher = async (token: string) => {
-  const limit = 5;
+const getRecentHitsFetcher = async (token: string, limit: number = 5) => {
   const recentOptions = {
     url: "https://api.spotify.com/v1/me/player/recently-played",
     headers: {
@@ -114,7 +113,7 @@ const getCurrentlyPlayingFetcher = async (token: string) => {
   const response = await fetch(playingOptions.url, {
     method: "get",
     headers: playingOptions.headers,
-    cache: "no-cache",
+    next: { revalidate: 30 },
   });
 
   if (response.status !== 200) {
@@ -129,23 +128,23 @@ const getCurrentlyPlayingFetcher = async (token: string) => {
 };
 
 const callWithTokenRevalidation =
-  <T>(
-    f: (token: string) => Promise<T | number>,
+  <T, P extends any[]>(
+    f: (token: string, ...rest: P) => Promise<T | number>,
     revalidateCall: boolean = false,
   ) =>
-  async (): Promise<T | number> => {
+  async (...params: P): Promise<T | number> => {
     const token = await getAccessToken();
     if (!token) {
       return 404;
     }
 
-    const status = await f(token);
+    const status = await f(token, ...params);
 
     if (typeof status === "number") {
       if (status === 401) {
         revalidateTag(TOKEN_CACHE_TAG);
         if (!revalidateCall) {
-          return callWithTokenRevalidation(f, true)();
+          return callWithTokenRevalidation(f, true)(...params);
         }
       }
     }

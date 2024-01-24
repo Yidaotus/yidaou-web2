@@ -42,8 +42,8 @@ export default function Home() {
           </div>
           <p className="w-[90%] md:w-2/3 z-10 relative">
             A 30-year-old residing and working independently in Düsseldorf as a
-            FullStack and Salesforce Software Developer. I&apos;ve been immersed in
-            programming and tinkering for as long as I can remember,
+            FullStack and Salesforce Software Developer. I&apos;ve been immersed
+            in programming and tinkering for as long as I can remember,
             consistently seeking to acquire new skills. A devoted Rust
             enthusiast, music lover, and polyglot.
           </p>
@@ -69,14 +69,17 @@ export default function Home() {
           <CardTitle className="text-lg">👨‍💻 Software Developer</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col space-y-2 text-muted-foreground">
-          <p className="">
-            Software development isn&apos;t just a job for me; it&apos;s my greatest
-            passion. I absolutely love creating things, and in the world of
-            software development, there are no fixed boundaries to confine my
-            creativity. That&apos;s what I find most exciting about this field, and
-            the fact that there&apos;s always something new to learn makes it even
-            more fulfilling.
-          </p>
+          <ul className="list-disc list-inside">
+            <li>Software development is my passion, not just a job.</li>
+            <li>
+              I love the limitless creativity in creating things through code.
+            </li>
+            <li>The ever-changing nature of the field excites me.</li>
+            <li>
+              Constant learning makes software development incredibly fulfilling
+              for me.
+            </li>
+          </ul>
         </CardContent>
       </Card>
 
@@ -85,12 +88,20 @@ export default function Home() {
           <CardTitle className="text-lg">💬 Language Enthusiast</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col space-y-2 text-muted-foreground">
-          <p className="">
-            Language has opened doors for me into realms of entertainment,
-            friendships, and cultures I didn&apos;t even know existed. Experiencing
-            how even a modest grasp of a language can broaden my horizons has
-            left me hooked.
-          </p>
+          <ul className="list-inside list-disc">
+            <li>
+              Language enthusiast exploring diverse cultures through various
+              languages.
+            </li>
+            <li>
+              Basic language proficiency significantly broadens my horizons.
+            </li>
+            <li>Language learning opens gateways to unexpected friendships.</li>
+            <li>
+              Immense joy in discovering life's unknown facets through exploring
+              languages.
+            </li>
+          </ul>
         </CardContent>
       </Card>
 
@@ -99,12 +110,14 @@ export default function Home() {
           <CardTitle className="text-lg">🎸 Musician</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col space-y-2 text-muted-foreground">
-          <p className="">
-            I play the guitar, particularly favoring fingerstyle, and have
-            proficiency in piano. I aim to incorporate saxophone into my musical
-            repertoire. Presently, my musical preferences include modern Jazz,
-            foreign rock/pop, and rock/metal.
-          </p>
+          <ul className="list-inside list-disc">
+            <li>I like to play fingerstyle Guitar and Piano.</li>
+            <li>Aiming to add saxophone to my musical repertoire.</li>
+            <li>Modern Jazz, foreign rock/pop and rock/metal.</li>
+            <li>
+              Constantly expanding my musical skills, exploring diverse genres.
+            </li>
+          </ul>
         </CardContent>
       </Card>
 

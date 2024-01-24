@@ -40,7 +40,7 @@ export default function Home() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <DrawingPinFilledIcon className="w-4 h-4" />
-            Projects
+            projects
           </CardTitle>
           <CardDescription>Recent or favorite projects of mine</CardDescription>
         </CardHeader>

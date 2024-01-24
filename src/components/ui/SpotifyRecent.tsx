@@ -21,7 +21,7 @@ const SpotifyRecentHitsPlaceholder = () => {
 const HIT_LIMIT = 5;
 
 const SpotifyRecentHits: React.FC = async () => {
-  const tracks = await getRecentHits();
+  const tracks = await getRecentHits(5)
 
   if (!tracks) {
     return <SpotifyRecentHitsPlaceholder />;

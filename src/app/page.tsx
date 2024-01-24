@@ -64,21 +64,51 @@ export default function Home() {
           </p>
         </CardContent>
         <CardFooter className="flex space-x-4">
-          <Button variant="outline" size="logo">
-            <GitHubLogoIcon className="h-6 w-6" />
-          </Button>
-          <Button variant="outline" size="logo">
-            <MediumIcon size={6} />
-          </Button>
-          <Button variant="outline" size="logo">
-            <LinkedInLogoIcon className="h-6 w-6" />
-          </Button>
-          <Button variant="outline" size="logo">
-            <EnvelopeOpenIcon className="h-6 w-6" />
+          <Button variant="outline" size="logo" title="GitHub">
+            <a
+              href="https://github.com/Yidaotus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubLogoIcon className="h-6 w-6" />
+            </a>
           </Button>
 
-          <Button variant="outline" size="logo" aria-label="Download CV" title="Download my CV">
-            <IdCardIcon className="h-6 w-6" />
+          <Button variant="outline" size="logo" title="Medium Blog">
+            <a
+              href="https://medium.com/@yidaotus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MediumIcon size={6} />
+            </a>
+          </Button>
+
+          <Button variant="outline" size="logo" title="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/voigtdaniel93/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInLogoIcon className="h-6 w-6" />
+            </a>
+          </Button>
+
+          <Button variant="outline" size="logo" title="Email">
+            <a href="mailto:dvoigt1993@gmail.com">
+              <EnvelopeOpenIcon className="h-6 w-6" />
+            </a>
+          </Button>
+
+          <Button
+            variant="outline"
+            size="logo"
+            aria-label="Download CV"
+            title="Download my CV"
+          >
+            <a href="/cv.pdf" download="cv.pdf">
+              <IdCardIcon className="h-6 w-6" />
+            </a>
           </Button>
         </CardFooter>
       </Card>
