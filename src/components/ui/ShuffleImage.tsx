@@ -15,7 +15,7 @@ const ShuffleImage = ({ images, shuffle, onClick }: ShuffleImageProps) => {
 
   useEffect(() => {
     setKey((key + 1) % images.length);
-  }, [shuffle]);
+  }, [images, key]);
 
   return (
     <AnimatePresence>

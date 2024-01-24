@@ -1,6 +1,5 @@
 "use client";
 
-import { CameraIcon } from "@radix-ui/react-icons";
 import ShuffleImage from "./ShuffleImage";
 import { useCallback, useEffect, useState } from "react";
 import { sleep } from "@/lib/utils";
@@ -16,7 +15,7 @@ const PhotoButton = () => {
 
   useEffect(() => {
     updateKeyRandom();
-  }, [shuffle]);
+  }, [updateKeyRandom]);
 
   return (
     <Link

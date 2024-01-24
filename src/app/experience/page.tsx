@@ -14,18 +14,15 @@ import {
   CodeIcon,
   DownloadIcon,
   InfoCircledIcon,
-  MagicWandIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import experiences from "../../content/profile/experiences.json";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Fragment } from "react";
 import tech from "../../content/tech.json";
-import skills from "../../content/profile/skills.json";
 import Link from "next/link";
 import GridButton from "@/components/ui/GridButton";
 import Socials from "@/components/ui/Socials";
-import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -49,10 +46,10 @@ export default function Home() {
             />
           </div>
           <p className="pr-28 z-10 relative">
-            Hi, I'm <span className="font-bold">Daniel</span>, a freelance web
+            Hi, I&apos;m <span className="font-bold">Daniel</span>, a freelance web
             developer who enjoys modernizing full-stack development. Proficient
             in Typescript, React, NodeJS, and PostgreSQL, I bring a fresh
-            perspective to projects. While I've explored Salesforce technical
+            perspective to projects. While I&apos;ve explored Salesforce technical
             consulting, my true passion lies in injecting creativity into web
             applications. Proactive work style and a preference for modern
             solutions.

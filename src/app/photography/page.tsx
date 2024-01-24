@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     updateKeyRandom();
-  }, [shuffle]);
+  }, [updateKeyRandom]);
 
   return (
     <main className="m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">

@@ -176,7 +176,7 @@ export default function Home() {
                   Language learning opens gateways to unexpected friendships.
                 </li>
                 <li>
-                  Immense joy in discovering life's unknown facets through
+                  Immense joy in discovering life&apos;s unknown facets through
                   exploring languages.
                 </li>
               </ul>
