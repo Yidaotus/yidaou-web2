@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeftIcon, PlayIcon } from "@radix-ui/react-icons";
+import { ArrowLeftIcon, PersonIcon, PlayIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Suspense } from "react";
 
@@ -27,7 +27,10 @@ export default function Home() {
 
       <Card className="col-span-4 lg:col-span-3 lg:row-span-2 relative">
         <CardHeader>
-          <CardTitle className="text-lg">Hi Im Daniel</CardTitle>
+          <CardTitle className="flex gap-2 items-center">
+            <PersonIcon className="w-4 h-4" />
+            about
+          </CardTitle>
           <CardDescription>About me personally</CardDescription>
         </CardHeader>
         <CardContent>

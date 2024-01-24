@@ -44,9 +44,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
   //   }
   // }, [isPresent]);
 
-  useEffect(() => {
-    cardsIn();
-  }, [cardsIn]);
+  // useEffect(() => {
+  //   cardsIn();
+  // }, [cardsIn]);
 
-  return <motion.div ref={scope}>{children}</motion.div>;
+  return <div>{children}</div>
+  // return <motion.div ref={scope}>{children}</motion.div>;
 }

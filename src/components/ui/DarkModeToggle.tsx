@@ -33,6 +33,7 @@ const DarkModeToggle = () => {
       <Button
         onClick={toggleDarkMode}
         className="w-full h-full flex items-center justify-center"
+        title="Toggle dark-mode"
       >
         <div className="absolute right-1 top-0 h-full text-muted-foreground opacity-50 group-hover:scale-125 transition-transform">
           {isDarkmode ? (

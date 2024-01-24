@@ -8,38 +8,35 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MediumIcon } from "@/components/ui/icons";
 import {
   ArrowLeftIcon,
   BackpackIcon,
   CodeIcon,
   DownloadIcon,
-  EnvelopeOpenIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  ThickArrowDownIcon,
+  InfoCircledIcon,
+  MagicWandIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import experiences from "../../content/profile/experiences.json";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Fragment } from "react";
 import tech from "../../content/tech.json";
+import skills from "../../content/profile/skills.json";
 import Link from "next/link";
 import GridButton from "@/components/ui/GridButton";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import Socials from "@/components/ui/Socials";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
     <main className="text-white m-auto p-2 grid gap-2 grid-cols-4 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen lg:gap-4  lg:max-h-[800px]">
-      <Card className="col-span-4 row-span-2 lg:col-span-3 md:row-span-1 lg:row-span-1 relative">
+      <Card className="col-span-4 row-span-1 lg:col-span-3 md:row-span-1 lg:row-span-1 relative">
         <CardHeader>
-          <CardTitle>
-            <WelcomeBanner />
+          <CardTitle className="flex gap-2 items-center">
+            <InfoCircledIcon className="w-4 h-4" />
+            about
           </CardTitle>
+          <CardDescription>about me profesionally</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="absolute right-6 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[486/1000] z-0 overflow-hidden object-center pr-2 md:pt-2">
@@ -51,39 +48,57 @@ export default function Home() {
               className="select-none opacity-25 lg:opacity-50 pointer-events-none object-cover"
             />
           </div>
-          <p className="text-xl pr-24 z-10 relative">
-            Im <span className="font-bold">Daniel</span> 30 years old living and
-            working in Düsseldorf as an independent Full Stack and Salesforce
-            Software Developer.
+          <p className="pr-28 z-10 relative">
+            Hi, I'm <span className="font-bold">Daniel</span>, a freelance web
+            developer who enjoys modernizing full-stack development. Proficient
+            in Typescript, React, NodeJS, and PostgreSQL, I bring a fresh
+            perspective to projects. While I've explored Salesforce technical
+            consulting, my true passion lies in injecting creativity into web
+            applications. Proactive work style and a preference for modern
+            solutions.
           </p>
         </CardContent>
         <CardFooter className="flex space-x-4">
-          <Button variant="outline" size="logo">
-            <GitHubLogoIcon className="h-6 w-6" />
-          </Button>
-          <Button variant="outline" size="logo">
-            <MediumIcon size={6} />
-          </Button>
-          <Button variant="outline" size="logo">
-            <LinkedInLogoIcon className="h-6 w-6" />
-          </Button>
-          <Button variant="outline" size="logo">
-            <EnvelopeOpenIcon className="h-6 w-6" />
-          </Button>
+          <Socials />
         </CardFooter>
       </Card>
 
+      {
+        // <Card className="col-span-4 lg:col-span-2 lg:row-span-2">
+        //   <CardHeader>
+        //     <CardTitle className="flex items-center gap-2">
+        //       <MagicWandIcon className="w-4 h-4" /> skills
+        //     </CardTitle>
+        //     <CardDescription>some of my skills</CardDescription>
+        //   </CardHeader>
+        //   <CardContent className="flex flex-col gap-2">
+        //     {skills.map((skillCategory) => (
+        //       <div key={skillCategory.title} className="flex flex-col gap-2">
+        //         <h2 className="">{skillCategory.title}</h2>
+        //         <ul className="flex gap-2 flex-wrap">
+        //           {skillCategory.skills.map((skill) => (
+        //             <li key={skill.name} className="">
+        //               <Badge variant="default">{skill.name}</Badge>
+        //             </li>
+        //           ))}
+        //         </ul>
+        //       </div>
+        //     ))}
+        //   </CardContent>
+        // </Card>
+      }
+
       <Card className="col-span-4 lg:col-span-1 lg:row-span-2">
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
-            <CodeIcon className="w-5 h-5" /> Tech I like
+          <CardTitle className="flex items-center gap-2">
+            <CodeIcon className="w-4 h-4" /> tech
           </CardTitle>
-          <CardDescription>Tech I am currently using</CardDescription>
+          <CardDescription>Tech I like currently using</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="lg:px-2">
           <ul className="flex gap-4 flex-wrap justify-center">
             {tech.map((t) => (
-              <li key={t.techId} className="w-14 h-14 relative">
+              <li key={t.techId} className="w-12 h-12 relative">
                 <Link href={t.link}>
                   <Image src={t.icon} fill alt={t.name} />
                 </Link>
@@ -93,11 +108,12 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[70vh] md:h-[520px]">
+
+      <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[70vh] md:h-[450px]">
         <CardHeader className="flex flex-row justify-between">
-          <div>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <BackpackIcon className="w-5 h-5" /> Experience
+          <div className="flex flex-col gap-2">
+            <CardTitle className="flex items-center gap-2">
+              <BackpackIcon className="w-4 h-4" /> experience
             </CardTitle>
             <CardDescription>My profesional working experience</CardDescription>
           </div>

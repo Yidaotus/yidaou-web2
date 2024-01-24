@@ -54,7 +54,7 @@ export default function Home() {
               className="select-none opacity-25 md:opacity-100 pointer-events-none object-contain"
             />
           </div>
-          <p className="text-xl pr-24 z-10 relative">
+          <p className="pr-24 z-10 relative">
             Here are some recent projects Ive been working on and their
             respective source codes. I like to test out new libraries and
             technologies, but my go to tech stack is:

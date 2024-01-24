@@ -1,10 +1,10 @@
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 import GridButton from "@/components/ui/GridButton";
 import PhotoButton from "@/components/ui/PhotoButton";
-import RecentBlockPostsCard, {
+import RecentBlockPosts, {
   BlockPostsPlaceHolder,
 } from "@/components/ui/RecentBlogPostsCard";
-import ShuffleImage from "@/components/ui/ShuffleImage";
+import Socials from "@/components/ui/Socials";
 import SpotifyCurrentlyPlaying, {
   PlaceholderPlayer,
 } from "@/components/ui/SpotifyCurrentlyPlaying";
@@ -18,22 +18,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MediumIcon } from "@/components/ui/icons";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  CameraIcon,
+  CountdownTimerIcon,
   EnvelopeOpenIcon,
-  GitHubLogoIcon,
   IdCardIcon,
-  LinkedInLogoIcon,
   PersonIcon,
+  QuoteIcon,
   RocketIcon,
-  SunIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Suspense } from "react";
@@ -63,53 +54,8 @@ export default function Home() {
             Software Developer.
           </p>
         </CardContent>
-        <CardFooter className="flex space-x-4">
-          <Button variant="outline" size="logo" title="GitHub">
-            <a
-              href="https://github.com/Yidaotus"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubLogoIcon className="h-6 w-6" />
-            </a>
-          </Button>
-
-          <Button variant="outline" size="logo" title="Medium Blog">
-            <a
-              href="https://medium.com/@yidaotus"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MediumIcon size={6} />
-            </a>
-          </Button>
-
-          <Button variant="outline" size="logo" title="LinkedIn">
-            <a
-              href="https://www.linkedin.com/in/voigtdaniel93/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInLogoIcon className="h-6 w-6" />
-            </a>
-          </Button>
-
-          <Button variant="outline" size="logo" title="Email">
-            <a href="mailto:dvoigt1993@gmail.com">
-              <EnvelopeOpenIcon className="h-6 w-6" />
-            </a>
-          </Button>
-
-          <Button
-            variant="outline"
-            size="logo"
-            aria-label="Download CV"
-            title="Download my CV"
-          >
-            <a href="/cv.pdf" download="cv.pdf">
-              <IdCardIcon className="h-6 w-6" />
-            </a>
-          </Button>
+        <CardFooter>
+          <Socials />
         </CardFooter>
       </Card>
 
@@ -139,24 +85,33 @@ export default function Home() {
       </Card>
 
       <Card className="col-span-2 row-span-1 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-3 relative">
-        <Suspense fallback={<BlockPostsPlaceHolder />}>
-          <RecentBlockPostsCard />
-        </Suspense>
+        <CardHeader>
+          <CardTitle className="flex gap-2 items-center">
+            <QuoteIcon className="h-4 w-4" />
+            blog
+          </CardTitle>
+          <CardDescription className="">Recent Entries</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-2">
+          <Suspense fallback={<BlockPostsPlaceHolder />}>
+            <RecentBlockPosts />
+          </Suspense>
+        </CardContent>
       </Card>
 
       <GridButton
-        title="Projects"
+        title="projects"
         href="/projects"
         icon={<RocketIcon className="w-full h-full" />}
       />
       <GridButton
         invert
-        title="About"
+        title="about"
         href="/about"
         icon={<PersonIcon className="w-full h-full" />}
       />
       <GridButton
-        title="Experience"
+        title="experience"
         href="/experience"
         icon={<IdCardIcon className="w-full h-full" />}
       />
@@ -164,9 +119,10 @@ export default function Home() {
       <div className="grid grid-cols-2 grid-rows-1 gap-2">
         <GridButton
           invert
-          title=""
-          href="/about"
-          icon={<PersonIcon className="w-full h-full" />}
+          hideTitle
+          title="My old Website"
+          href="https://old.yidaou.tech"
+          icon={<CountdownTimerIcon className="w-full h-full" />}
         />
 
         <DarkModeToggle />
@@ -178,7 +134,29 @@ export default function Home() {
       <Card className="col-span-2 row-span-1 md:row-span-2 lg:col-span-2 lg:row-span-2 overflow-hidden">
         <PhotoButton />
       </Card>
-      <Card className="row-span-2 col-span-1 md:row-span-2">lol</Card>
+      <Card className="row-span-1 col-span-2 md:row-span-2 md:col-span-1 lg:row-span-2">
+        <CardHeader>
+          <CardTitle className="flex gap-2 items-center">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>{" "}
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            open for projects
+          </CardTitle>
+
+          <CardDescription>
+            I am currently open for new projects!
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-muted-foreground flex gap-2 items-center justify-between">
+          Just contact me!
+          <Button variant="outline" size="logo" title="Email">
+            <a href="mailto:dvoigt1993@gmail.com">
+              <EnvelopeOpenIcon className="h-4 w-4" />
+            </a>
+          </Button>
+        </CardContent>
+      </Card>
       <div className="row-span-1 col-span-2 md:col-span-1">
         <Card className="relative overflow-hidden h-full">
           <Suspense fallback={<PlaceholderPlayer />}>

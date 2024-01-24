@@ -30,7 +30,7 @@ const ShuffleImage = ({ images, shuffle, onClick }: ShuffleImageProps) => {
       >
         <Image
           priority
-          sizes="25vw"
+          sizes="50vw"
           src={`/photos/${images[key]}`}
           fill
           alt="00"

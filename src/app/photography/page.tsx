@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <main className="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
-      <Card className="col-span-4 lg:col-span-2 lg:row-span-1 relative">
+      <Card className="col-span-4 md:col-span-2 lg:col-span-2 lg:row-span-1 relative">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <CameraIcon className="w-4 h-4" />
@@ -41,7 +41,7 @@ export default function Home() {
           <CardDescription>One of my hobbies</CardDescription>
         </CardHeader>
         <CardContent className="relative">
-          <div className="absolute right-0 lg:right-4 top-1/2 -translate-y-1/2 w-32 z-0">
+          <div className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 w-32 z-0">
             <Image
               src="/mascot/char_photo.png"
               height={908}
@@ -63,7 +63,7 @@ export default function Home() {
           </ul>
         </CardContent>
       </Card>
-      <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:col-span-2 md:row-span-2 lg:row-span-3 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <motion.div layoutId="00.jpg">
           <ShuffleImage
             onClick={(img) => setSelectedImage(img)}
@@ -72,14 +72,14 @@ export default function Home() {
           />
         </motion.div>
       </Card>
-      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:col-span-2 md:row-span-1 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
           images={["04.jpg", "05.jpg", "08.jpg"]}
           shuffle={shuffle}
         />
       </Card>
-      <Card className="col-span-4 lg:row-span-2 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:col-span-1 md:row-span-1 lg:row-span-3 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
           images={["10.jpg", "11.jpg", "13.jpg"]}
@@ -87,7 +87,7 @@ export default function Home() {
         />
       </Card>
 
-      <div className="col-span-4 lg:col-span-1 lg:row-span-1  min-h-[100px]">
+      <div className="col-span-4 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1  min-h-[100px]">
         <GridButton
           title="Back"
           href="/"
@@ -104,21 +104,21 @@ export default function Home() {
         // </Card>
       }
 
-      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:row-span-2 md:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
           images={["01.jpg", "13.jpg", "04.jpg"]}
           shuffle={shuffle}
         />
       </Card>
-      <Card className="col-span-4 lg:row-span-1 lg:col-span-2 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:row-span-2 md:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
           images={["11.jpg", "08.jpg", "01.jpg"]}
           shuffle={shuffle}
         />
       </Card>
-      <Card className="col-span-4 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
+      <Card className="col-span-4 md:row-span-1 md:col-span-2 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
           images={["08.jpg", "03.jpg", "05.jpg"]}
@@ -133,15 +133,15 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
             exit={{ opacity: 0, scale: 0.8, y: "-50%", x: "-50%" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed h-full w-full md:h-[50vh] md:w-[50vw] top-1/2 left-1/2 z-50 rounded"
+            className="fixed h-full w-full md:h-[70vh] md:w-[70vw] top-1/2 left-1/2 z-50 rounded-xl m-auto"
           >
             <Image
               priority
               fill
               alt={selectedImage}
               src={`/photos/${selectedImage}`}
-              className="object-contain md:object-contain object-center rounded"
-              sizes="50vw"
+              className="w-auto h-auto object-contain rounded-lg"
+              sizes="100vw"
               placeholder="blur"
               blurDataURL={"data:image/jpeg;base64," + BlurImg}
             />

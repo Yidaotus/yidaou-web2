@@ -6,9 +6,16 @@ type GridButtonProps = {
   title: string;
   icon: React.ReactElement;
   invert?: boolean;
+  hideTitle?: boolean;
 };
 
-const GridButton = ({ href, title, icon, invert = false }: GridButtonProps) => {
+const GridButton = ({
+  href,
+  title,
+  icon,
+  invert = false,
+  hideTitle = false,
+}: GridButtonProps) => {
   return (
     <Card
       className={`col-span-1 row-span-1 flex items-center justify-center ${
@@ -20,10 +27,13 @@ const GridButton = ({ href, title, icon, invert = false }: GridButtonProps) => {
       <Link
         href={href}
         className="w-full h-full flex items-center justify-center"
+        title={title}
       >
-        <h2 className="text-2xl font-bold relative z-10 transition-transform flex items-center">
-          <span>{title}</span>
-        </h2>
+        {!hideTitle && (
+          <h2 className="text-2xl font-bold relative z-10 transition-transform flex items-center">
+            <span>{title}</span>
+          </h2>
+        )}
         <div className="absolute right-1 top-0 h-full text-muted-foreground opacity-50 group-hover:scale-125 transition-transform">
           {icon}
         </div>
