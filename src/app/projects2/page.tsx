@@ -14,7 +14,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4  font-light lg:max-h-[800px]">
+    <main className="m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4  font-light lg:max-h-[800px]">
       <Card className="lg:col-span-1 lg:row-span-1 ">Back</Card>
       <Card className="lg:col-span-3 lg:row-span-2 ">
         <CardHeader>

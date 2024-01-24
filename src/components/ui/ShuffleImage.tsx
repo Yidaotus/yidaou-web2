@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 type ShuffleImageProps = {
   images: Array<string>;
   shuffle: number;
-  onClick: (img: string) => void;
+  onClick?: (img: string) => void;
 };
 
 const ShuffleImage = ({ images, shuffle, onClick }: ShuffleImageProps) => {
@@ -26,7 +26,7 @@ const ShuffleImage = ({ images, shuffle, onClick }: ShuffleImageProps) => {
         exit={{ x: "-100%" }}
         animate={{ x: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        onClick={() => onClick(images[key])}
+        onClick={() => onClick?.(images[key])}
       >
         <Image
           priority

@@ -31,7 +31,7 @@ export default function Home() {
   }, [shuffle]);
 
   return (
-    <main className="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
+    <main className="m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4 lg:max-h-[800px] font-light">
       <Card className="col-span-4 md:col-span-2 lg:col-span-2 lg:row-span-1 relative">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -50,7 +50,7 @@ export default function Home() {
               className="select-none opacity-25 md:opacity-100 pointer-events-none object-contain"
             />
           </div>
-          <p className="text-xl pr-24 z-10 relative">
+          <p className="pr-24 z-10 relative">
             Some photos I took I like landscape/nature and street photography.
             My equipment:
           </p>
