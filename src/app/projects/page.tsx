@@ -76,6 +76,8 @@ export default function Home() {
             className="h-full w-full cursor-pointer group overflow-hidden relative"
           >
             <Image
+              priority
+              sizes="50vw"
               className="absolute h-full w-full opacity-30 top-0 left-0 z-0 rounded-lg object-cover group-hover:scale-[1.02] transition-transform"
               fill
               src={`/projects/${project.image}`}

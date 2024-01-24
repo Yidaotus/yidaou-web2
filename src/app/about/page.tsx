@@ -121,6 +121,7 @@ export default function Home() {
               </ul>
             </CardContent>
             <Image
+              priority
               className="absolute bottom-4 right-4 h-full w-auto pt-14 opacity-20 z-0 pointer-events-none select-none"
               src="/mascot/char_work.png"
               alt="Mascot Working"

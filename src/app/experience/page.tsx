@@ -46,13 +46,13 @@ export default function Home() {
             />
           </div>
           <p className="pr-28 z-10 relative">
-            Hi, I&apos;m <span className="font-bold">Daniel</span>, a freelance web
-            developer who enjoys modernizing full-stack development. Proficient
-            in Typescript, React, NodeJS, and PostgreSQL, I bring a fresh
-            perspective to projects. While I&apos;ve explored Salesforce technical
-            consulting, my true passion lies in injecting creativity into web
-            applications. Proactive work style and a preference for modern
-            solutions.
+            Hi, I&apos;m <span className="font-bold">Daniel</span>, a freelance
+            web developer who enjoys modernizing full-stack development.
+            Proficient in Typescript, React, NodeJS, and PostgreSQL, I bring a
+            fresh perspective to projects. While I&apos;ve explored Salesforce
+            technical consulting, my true passion lies in injecting creativity
+            into web applications. Proactive work style and a preference for
+            modern solutions.
           </p>
         </CardContent>
         <CardFooter className="flex space-x-4">
@@ -95,16 +95,15 @@ export default function Home() {
         <CardContent className="lg:px-3">
           <ul className="flex gap-4 flex-wrap justify-center">
             {tech.map((t) => (
-              <li key={t.techId} className="w-12 h-12 relative">
-                <Link href={t.link}>
-                  <Image src={t.icon} fill alt={t.name} />
-                </Link>
-              </li>
+              <Link href={t.link} key={t.techId} as="span">
+                <li className="w-12 h-12 relative">
+                  <Image src={t.icon} fill alt={t.name} sizes="10vw" />
+                </li>
+              </Link>
             ))}
           </ul>
         </CardContent>
       </Card>
-
 
       <Card className="col-span-4 lg:col-span-3 row-span-2 relative h-[70vh] md:h-[450px]">
         <CardHeader className="flex flex-row justify-between">
@@ -136,7 +135,7 @@ export default function Home() {
                           <CardTitle className="text-lg lg:pl-8">
                             {experience.title}
                           </CardTitle>
-                          <CardDescription className="lg:pl-8">
+                          <div className="lg:pl-8 text-sm text-muted-foreground">
                             <div>{experience.company}</div>
                             <div>
                               {new Date(
@@ -149,7 +148,7 @@ export default function Home() {
                                   ).toLocaleDateString()
                                 : "present"}
                             </div>
-                          </CardDescription>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -36,18 +36,18 @@ export default function Template({ children }: { children: React.ReactNode }) {
     );
   };
 
-  // useEffect(() => {
-  //   if (isPresent) {
-  //     cardsIn();
-  //   } else {
-  //     cardsOut();
-  //   }
-  // }, [isPresent]);
+   // useEffect(() => {
+   //   if (isPresent) {
+   //     cardsIn();
+   //   } else {
+   //     cardsOut();
+   //   }
+   // }, [isPresent]);
+  
+   useEffect(() => {
+     cardsIn();
+   }, [cardsIn]);
 
-  // useEffect(() => {
-  //   cardsIn();
-  // }, [cardsIn]);
-
-  return <div>{children}</div>
-  // return <motion.div ref={scope}>{children}</motion.div>;
+  // return <div>{children}</div>
+  return <motion.div ref={scope}>{children}</motion.div>;
 }
