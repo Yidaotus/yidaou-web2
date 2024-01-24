@@ -15,12 +15,14 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowLeftIcon,
+  CrossCircledIcon,
   DrawingPinFilledIcon,
   GitHubLogoIcon,
   Link2Icon,
 } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import GridButton from "@/components/ui/GridButton";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<
@@ -29,13 +31,6 @@ export default function Home() {
 
   return (
     <main className="m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen grid-cols-4 lg:gap-4  font-light lg:max-h-[800px]">
-      <div className="col-span-4 lg:col-span-1 lg:row-span-2">
-        <GridButton
-          title="Back"
-          href="/"
-          icon={<ArrowLeftIcon className="w-full h-full" />}
-        />
-      </div>
       <Card className="col-span-4 lg:col-span-2 lg:row-span-2 ">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -74,28 +69,38 @@ export default function Home() {
         <motion.div
           key={project.title}
           layoutId={project.title}
-          className={`col-span-2 z-10 min-h-[100px]`}
+          className={`col-span-4 md:col-span-2 z-10 min-h-[100px]`}
         >
           <Card
             onClick={() => setSelectedProject(project)}
             className="h-full w-full cursor-pointer group overflow-hidden relative"
           >
             <Image
-              className="absolute h-full w-full opacity-60 top-0 left-0 z-0 rounded-lg object-cover group-hover:scale-[1.02] transition-transform"
+              className="absolute h-full w-full opacity-30 top-0 left-0 z-0 rounded-lg object-cover group-hover:scale-[1.02] transition-transform"
               fill
               src={`/projects/${project.image}`}
               alt={project.title}
             />
             <div className="z-10 px-4 py-2 flex flex-col justify-end h-full w-full">
-              <h1 className="text-xl font-bold">{project.title}</h1>
+              <h1 className="text-xl font-bold text-secondary-foreground">
+                {project.title}
+              </h1>
             </div>
           </Card>
         </motion.div>
       ))}
+      <Card className="col-span-4 lg:col-span-1 lg:row-span-1"></Card>
+      <div className="col-span-4 lg:col-span-1 lg:row-span-1">
+        <GridButton
+          title="Back"
+          href="/"
+          icon={<ArrowLeftIcon className="w-full h-full" />}
+        />
+      </div>
       <AnimatePresence>
         <div
           key="viewcontainer"
-          className={`fixed h-[90vh] w-screen py-4 px-4 top-1/2 left-0 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 md:w-[900px] md:h-[500px] z-40 ${
+          className={`fixed h-[90vh] w-screen py-4 px-4 top-1/2 left-0 lg:left-1/2 lg:-translate-x-1/2 -translate-y-1/2 lg:w-[900px] lg:h-[500px] z-50 ${
             selectedProject ? "block" : "hidden"
           }`}
         >
@@ -104,13 +109,20 @@ export default function Home() {
               layoutId={selectedProject.title}
               className="w-full h-full z-50"
             >
-              <Card className="h-full w-full opacity-100">
+              <Card className="h-full w-full opacity-100 relative">
                 <div
                   className="bg-cover bg-center bg-opacity-10 bg-no-repeat h-2/3 w-full rounded-t-lg opacity-80"
                   style={{
                     backgroundImage: `url(/projects/${selectedProject.image})`,
                   }}
                 />
+                <Button
+                  variant="ghost"
+                  className="absolute right-0 top-4"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  <CrossCircledIcon className="w-12 h-12 opacity-80" />
+                </Button>
                 <Tabs
                   defaultValue="about"
                   className="w-full h-1/3 overflow-hidden"
@@ -122,7 +134,7 @@ export default function Home() {
                   </TabsList>
                   <TabsContent
                     value="about"
-                    className="px-8 py-4 grid items-center"
+                    className="px-8 pt-2 grid items-center justify-center"
                   >
                     <div className="flex items-center">
                       <div className="relative flex flex-col justify-end w-full">
@@ -147,15 +159,40 @@ export default function Home() {
                       </div>
                     </div>
                   </TabsContent>
-                  <TabsContent value="technologies" className="px-8 py-4">
-                    <div className="flex gap-2 items-center">
+                  <TabsContent value="technologies" className="pt-2 pb-2">
+                    <div className="flex gap-4 items-center relative justify-center">
                       {selectedProject.technologies.map((tech) => (
-                        <div key={tech}>{tech}</div>
+                        <div key={tech} className="w-12 h-12 relative">
+                          <Image
+                            title={tech}
+                            fill
+                            alt={tech}
+                            src={`/tech/icons/${tech}.svg`}
+                          />
+                        </div>
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="challenges">
-                    Change your password here.
+                  <TabsContent
+                    value="challenges"
+                    className="px-6"
+                  >
+                    <ScrollArea className="md:h-[100px] w-full">
+                      Lorem ipsum dolor sit amet, officia excepteur ex fugiat
+                      reprehenderit enim labore culpa sint ad nisi Lorem
+                      pariatur mollit ex esse exercitation amet. Nisi anim
+                      cupidatat excepteur officia. Reprehenderit nostrud nostrud
+                      ipsum Lorem est aliquip amet voluptate voluptate dolor
+                      minim nulla est proident. Nostrud officia pariatur ut
+                      officia. Sit irure elit esse ea nulla sunt ex occaecat
+                      reprehenderit commodo officia dolor Lorem duis laboris
+                      cupidatat officia voluptate. Culpa proident adipisicing id
+                      nulla nisi laboris ex in Lorem sunt duis officia eiusmod.
+                      Aliqua reprehenderit commodo ex non excepteur duis sunt
+                      velit enim. Voluptate laboris sint cupidatat ullamco ut ea
+                      consectetur et est culpa et culpa duis.
+                      <ScrollBar className="rounded-br-lg rounded-t bg-muted-foreground text-muted-foreground pr-1" />
+                    </ScrollArea>
                   </TabsContent>
                 </Tabs>
               </Card>

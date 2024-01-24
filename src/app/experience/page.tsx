@@ -95,7 +95,7 @@ export default function Home() {
           </CardTitle>
           <CardDescription>Tech I like currently using</CardDescription>
         </CardHeader>
-        <CardContent className="lg:px-2">
+        <CardContent className="lg:px-3">
           <ul className="flex gap-4 flex-wrap justify-center">
             {tech.map((t) => (
               <li key={t.techId} className="w-12 h-12 relative">
