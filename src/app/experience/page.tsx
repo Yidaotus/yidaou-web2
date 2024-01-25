@@ -35,7 +35,7 @@ export default function Home() {
           <CardDescription>about me profesionally</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[486/1000] z-0 overflow-hidden object-center pr-2 md:pt-2">
+          <div className="absolute right-6 top-1/2 -translate-y-1/2  h-2/3 md:h-full aspect-[486/1000] z-0 overflow-hidden object-center pr-2 md:pt-2">
             <Image
               src="/mascot/char_contact.png"
               height={1000}
@@ -44,7 +44,7 @@ export default function Home() {
               className="select-none opacity-25 lg:opacity-50 pointer-events-none object-cover"
             />
           </div>
-          <p className="pr-28 z-10 relative">
+          <p className="pr-12 md:pr-28 z-10 relative">
             Hi, I&apos;m <span className="font-bold">Daniel</span>, a freelance
             web developer who enjoys modernizing full-stack development.
             Proficient in Typescript, React, NodeJS, and PostgreSQL, I bring a
@@ -122,19 +122,19 @@ export default function Home() {
         </CardHeader>
         <ScrollArea className="">
           <div className="flex gap-2 pr-4">
-            <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] relative">
+            <div className="grid grid-cols-[auto_1fr] relative">
               {experiences.map((experience) => (
                 <Fragment key={experience.title}>
-                  <div className="hidden lg:block border-l-muted-foreground border-l-2 left-8 top-12 w-2 absolute h-full" />
+                  <div className="border-l-muted-foreground border-l-2 left-8 top-12 w-2 absolute h-full" />
                   <CardHeader className="col-span-2 relative">
                     <div className="sticky top-4">
                       <div className="flex">
-                        <div className="hidden lg:block border-muted-foreground border-2 bg-muted-foreground rounded-full w-4 h-4 relative top-4 left-[1px]" />
+                        <div className="border-muted-foreground border-2 bg-muted-foreground rounded-full w-4 h-4 relative top-4 left-[1px]" />
                         <div className="flex flex-col">
-                          <CardTitle className="text-lg lg:pl-8">
+                          <CardTitle className="text-lg pl-8">
                             {experience.title}
                           </CardTitle>
-                          <div className="lg:pl-8 text-sm text-muted-foreground">
+                          <div className="pl-8 text-sm text-muted-foreground">
                             <div>{experience.company}</div>
                             <div>
                               {new Date(
@@ -152,7 +152,7 @@ export default function Home() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="flex flex-col space-y-1  md:pl-20 col-span-2 relative z-10">
+                  <CardContent className="flex flex-col gap-2  pl-20 col-span-2 relative z-10">
                     <ul className="list-disc list-inside space-y-1">
                       {experience.activities.map((activity) => (
                         <li
@@ -161,6 +161,15 @@ export default function Home() {
                         >
                           {activity}
                         </li>
+                      ))}
+                    </ul>
+                    Skills:{" "}
+                    <ul className="flex gap-1 flex-wrap text-sm text-muted-foreground ">
+                      {experience.skills.map((skill, i) => (
+                        <span key={`skill-${i}`}>
+                          {skill}
+                          {i < experience.skills.length - 1 && " · "}
+                        </span>
                       ))}
                     </ul>
                   </CardContent>

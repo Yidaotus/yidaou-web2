@@ -9,6 +9,20 @@
       "Collaborating with clients to understand their requirements and delivering tailor-made solutions.",
       "Balancing technical expertise with a creative touch to deliver visually appealing and functional user interfaces.",
       "Elevating brand identity through meticulously crafted websites, integrating dynamic animations seamlessly into the user interface for an engaging and memorable user experience that leaves a lasting brand impression."
+    ],
+    "skills": [
+      "Typescript",
+      "React.js",
+      "Svelte",
+      "Node.js",
+      "Serverless",
+      "Next.js",
+      "Astro",
+      "CI/CD",
+      "Docker",
+      "Webdevelopment",
+      "REST-API",
+      "Full-Stack-Development"
     ]
   },
   {
@@ -16,7 +30,17 @@
     "company": "Self employed",
     "startDate": "2021-08-01",
     "endDate": "2023-03-01",
-    "activities": ["Salesforce technical consulting"]
+    "activities": ["Salesforce technical consulting"],
+    "skills": [
+      "Java",
+      "REST-API",
+      "Administration-Salesforce.com",
+      "LWC",
+      "LWR",
+      "Visualforce",
+      "APEX",
+      "Salesforce.com-Development"
+    ]
   },
   {
     "title": "Lead Software Developer",
@@ -33,6 +57,25 @@
       "Administration and maintenance of GIT repositories and Linux servers",
       "Code reviews and guidance of interns and student workers",
       "Development and conduct of internal trainings and workshops (e.g. on Git, test frameworks, agile project management)"
+    ],
+    "skills": [
+      "Node.js",
+      "HTML",
+      "Heroku",
+      "Serverless",
+      "Next.js",
+      "Java",
+      "Typescript",
+      "JSON",
+      "Linux",
+      "Git",
+      "Webdevelopment",
+      "REST-API",
+      "Frontend-Development",
+      "Full-Stack-Development",
+      "Administration-Salesforce.com",
+      "Salesforce.com-Development",
+      "DevOps"
     ]
   },
   {
@@ -50,6 +93,21 @@
       "Independent coordination and implementation of development sub-projects in cross-functional projects",
       "Support and guidance of interns and student workers",
       "First and second level support"
+    ],
+    "skills": [
+      "HTML",
+      "JavaScript",
+      "JSON",
+      "Git",
+      "Web-Development",
+      "REST-API",
+      "Frontend-Development",
+      "TypeScript",
+      "React.js",
+      "Vue.js",
+      "Java",
+      "SQL",
+      "Full-Stack-Development"
     ]
   }
 ]
