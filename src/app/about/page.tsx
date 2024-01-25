@@ -1,6 +1,5 @@
 import GridButton from "@/components/ui/GridButton";
 import { BlockPostsPlaceHolder } from "@/components/ui/RecentBlogPostsCard";
-import ShuffleImage from "@/components/ui/ShuffleImage";
 import SpotifyCurrentlyPlaying, {
   PlaceholderPlayer,
 } from "@/components/ui/SpotifyCurrentlyPlaying";
@@ -9,10 +8,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowLeftIcon,
@@ -45,7 +44,7 @@ export default function Home() {
           <CardDescription>About me personally</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="absolute -right-8 md:right-0 top-0 h-full aspect-[842/998] z-0 overflow-hidden md:pr-2 md:pt-2">
+          <div className="absolute -right-8 lg:right-0 bottom-4 lg:bottom-0 h-2/3 lg:h-full aspect-[842/998] z-0 overflow-hidden pr-2 lg:pt-2">
             <Image
               src="/mascot/char_wave.png"
               height={998}
@@ -54,7 +53,7 @@ export default function Home() {
               className="select-none opacity-25 lg:opacity-50 pointer-events-none object-cover"
             />
           </div>
-          <p className="w-[90%] md:w-2/3 z-10 relative">
+          <p className="w-3/4 md:w-2/3 z-10 relative">
             A 30-year-old residing and working independently in Düsseldorf as a
             FullStack and Salesforce Software Developer. I&apos;ve been immersed
             in programming and tinkering for as long as I can remember,
@@ -78,26 +77,29 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="col-span-4 md:col-span-3 md:row-span-2 lg:row-span-3 relative">
+      <Card className="col-span-4 md:col-span-3 md:row-span-3 relative">
         <Tabs defaultValue="dev" className="w-full">
-          <TabsList className="flex justify-center w-full bg-secondary">
-            <TabsTrigger value="dev" className="flex gap-2 items-center">
-              <CodeIcon className="w-4 h-4" />
-              Developer
-            </TabsTrigger>
-            <TabsTrigger value="music" className="flex gap-2 items-center">
-              <ResumeIcon className="w-4 h-4" />
-              Musician
-            </TabsTrigger>
-            <TabsTrigger value="lang" className="flex gap-2 items-center">
-              <GlobeIcon className="w-4 h-4" />
-              Polyglot
-            </TabsTrigger>
-            <TabsTrigger value="photo" className="flex gap-2 items-center">
-              <CameraIcon className="w-4 h-4" />
-              Photographer
-            </TabsTrigger>
-          </TabsList>
+          <ScrollArea className="rounded-t-lg">
+            <TabsList className="flex justify-center w-full bg-secondary px-4 sm:px-0">
+              <TabsTrigger value="dev" className="flex gap-2 items-center">
+                <CodeIcon className="w-4 h-4" />
+                Developer
+              </TabsTrigger>
+              <TabsTrigger value="music" className="flex gap-2 items-center">
+                <ResumeIcon className="w-4 h-4" />
+                Musician
+              </TabsTrigger>
+              <TabsTrigger value="lang" className="flex gap-2 items-center">
+                <GlobeIcon className="w-4 h-4" />
+                Polyglot
+              </TabsTrigger>
+              <TabsTrigger value="photo" className="flex gap-2 items-center">
+                <CameraIcon className="w-4 h-4" />
+                Photographer
+              </TabsTrigger>
+            </TabsList>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
           <TabsContent value="dev">
             <CardHeader>
               <CardTitle className="flex gap-2 items-center">
@@ -122,7 +124,7 @@ export default function Home() {
             </CardContent>
             <Image
               priority
-              className="absolute bottom-4 right-4 h-full w-auto pt-14 opacity-20 z-0 pointer-events-none select-none"
+              className="absolute top-0 md:bottom-4 right-4 w-1/3 h-auto md:h-full md:w-auto py-8 pt-12 opacity-20 z-0 pointer-events-none select-none"
               src="/mascot/char_work.png"
               alt="Mascot Working"
               width={852}
@@ -149,9 +151,9 @@ export default function Home() {
               </ul>
             </CardContent>
             <Image
-              className="absolute bottom-4 right-4 h-full w-auto pt-14 opacity-20 z-0 pointer-events-none select-none"
+              className="absolute top-0 md:bottom-4 right-4 w-1/3 h-auto md:h-full md:w-auto py-8 pt-12 opacity-20 z-0 pointer-events-none select-none"
               src="/mascot/char_guitar.png"
-              alt="Mascot Working"
+              alt="Mascot Playing Guitar"
               width={852}
               height={981}
             />
@@ -183,9 +185,9 @@ export default function Home() {
               </ul>
             </CardContent>
             <Image
-              className="absolute bottom-4 right-4 h-full w-auto pt-14 opacity-10 z-0 pointer-events-none select-none"
+              className="absolute top-0 md:bottom-4 right-4 w-1/3 h-auto md:h-full md:w-auto py-8 pt-12 opacity-20 z-0 pointer-events-none select-none"
               src="/mascot/char_nihao.png"
-              alt="Mascot Working"
+              alt="Mascot Waving"
               width={852}
               height={981}
             />
@@ -207,17 +209,17 @@ export default function Home() {
               </ul>
             </CardContent>
             <Image
-              className="absolute bottom-4 right-4 h-full w-auto pt-14 opacity-20 z-0 pointer-events-none select-none"
+              className="absolute top-0 md:bottom-4 right-4 h-full w-auto md:h-full md:w-auto py-8 pt-12 opacity-20 z-0 pointer-events-none select-none"
               src="/mascot/char_photo.png"
-              alt="Mascot Working"
-              width={852}
-              height={981}
+              alt="Mascot Taking Photos"
+              width={658}
+              height={1000}
             />
           </TabsContent>
         </Tabs>
       </Card>
 
-      <div className="col-span-4 lg:col-span-1 lg:row-span-1">
+      <div className="col-span-4 md:col-span-1 md:row-span-1">
         <GridButton
           title="Back"
           href="/"

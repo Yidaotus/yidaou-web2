@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 type ShuffleImageProps = {
   images: Array<string>;
@@ -11,27 +10,21 @@ type ShuffleImageProps = {
 };
 
 const ShuffleImage = ({ images, shuffle, onClick }: ShuffleImageProps) => {
-  const [key, setKey] = useState(0);
-
-  useEffect(() => {
-    setKey((currentKey) => (currentKey + 1) % images.length);
-  }, [shuffle, images]);
-
   return (
     <AnimatePresence>
       <motion.div
-        key={images[key]}
+        key={images[shuffle % images.length]}
         className="absolute left-0 top-0 h-full w-full"
         initial={{ x: "100%" }}
         exit={{ x: "-100%" }}
         animate={{ x: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        onClick={() => onClick?.(images[key])}
+        onClick={() => onClick?.(images[shuffle % images.length])}
       >
         <Image
           priority
-          sizes="50vw"
-          src={`/photos/${images[key]}`}
+          sizes="50vh"
+          src={`/photos/${images[shuffle % images.length]}`}
           fill
           alt="00"
           className="rounded-[var(--radius)] object-cover hover:scale-[1.03] transition-transform object-center"

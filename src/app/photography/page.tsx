@@ -22,11 +22,13 @@ export default function Home() {
   const [shuffle, setShuffle] = useState(0);
 
   const updateKeyRandom = useCallback(async () => {
+    console.debug(`Page: updateKeyRandom shuffle: ${shuffle}`);
     await sleep(Math.random() * 10000 + 5000);
     setShuffle(shuffle + 1);
   }, [shuffle]);
 
   useEffect(() => {
+    console.debug(`Page: useEffect`);
     updateKeyRandom();
   }, [updateKeyRandom]);
 
@@ -64,13 +66,11 @@ export default function Home() {
         </CardContent>
       </Card>
       <Card className="col-span-4 md:col-span-2 md:row-span-2 lg:row-span-3 lg:col-span-1 relative overflow-hidden min-h-[100px]">
-        <motion.div layoutId="00.jpg">
-          <ShuffleImage
-            onClick={(img) => setSelectedImage(img)}
-            images={["00.jpg", "01.jpg", "03.jpg"]}
-            shuffle={shuffle}
-          />
-        </motion.div>
+        <ShuffleImage
+          onClick={(img) => setSelectedImage(img)}
+          images={["00.jpg", "01.jpg", "03.jpg"]}
+          shuffle={shuffle}
+        />
       </Card>
       <Card className="col-span-4 md:col-span-2 md:row-span-1 lg:row-span-1 lg:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
@@ -114,14 +114,14 @@ export default function Home() {
       <Card className="col-span-4 md:row-span-2 md:col-span-1 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
-          images={["11.jpg", "08.jpg", "01.jpg"]}
+          images={["14.jpg", "08.jpg", "10.jpg"]}
           shuffle={shuffle}
         />
       </Card>
       <Card className="col-span-4 md:row-span-1 md:col-span-2 relative overflow-hidden min-h-[100px]">
         <ShuffleImage
           onClick={(img) => setSelectedImage(img)}
-          images={["08.jpg", "03.jpg", "05.jpg"]}
+          images={["17.jpg", "16.jpg", "15.jpg"]}
           shuffle={shuffle}
         />
       </Card>
@@ -141,7 +141,7 @@ export default function Home() {
               alt={selectedImage}
               src={`/photos/${selectedImage}`}
               className="w-auto h-auto object-contain rounded-lg"
-              sizes="100vw"
+              sizes="100vh"
               placeholder="blur"
               blurDataURL={"data:image/jpeg;base64," + BlurImg}
             />

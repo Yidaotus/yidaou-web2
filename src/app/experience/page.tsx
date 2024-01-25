@@ -1,4 +1,3 @@
-import WelcomeBanner from "@/components/ui/WelcomeBanner";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -97,7 +96,7 @@ export default function Home() {
             {tech.map((t) => (
               <Link href={t.link} key={t.techId} as="span">
                 <li className="w-12 h-12 relative">
-                  <Image src={t.icon} fill alt={t.name} sizes="10vw" />
+                  <Image src={t.icon} fill alt={t.name} sizes="10vh" />
                 </li>
               </Link>
             ))}

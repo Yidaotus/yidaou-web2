@@ -77,7 +77,7 @@ export default function Home() {
           >
             <Image
               priority
-              sizes="50vw"
+              sizes="50vh"
               className="absolute h-full w-full opacity-30 top-0 left-0 z-0 rounded-lg object-cover group-hover:scale-[1.02] transition-transform"
               fill
               src={`/projects/${project.image}`}
@@ -111,9 +111,9 @@ export default function Home() {
               layoutId={selectedProject.title}
               className="w-full h-full z-50"
             >
-              <Card className="h-full w-full opacity-100 relative">
+              <Card className="h-full w-full opacity-100 relative translate-x-0">
                 <div
-                  className="bg-cover bg-center bg-opacity-10 bg-no-repeat h-2/3 w-full rounded-t-lg opacity-80"
+                  className="bg-cover bg-center bg-opacity-10 bg-no-repeat h-1/2 w-full rounded-t-lg opacity-80"
                   style={{
                     backgroundImage: `url(/projects/${selectedProject.image})`,
                   }}
@@ -127,7 +127,7 @@ export default function Home() {
                 </Button>
                 <Tabs
                   defaultValue="about"
-                  className="w-full h-1/3 overflow-hidden"
+                  className="w-full h-1/2 overflow-hidden z-20"
                 >
                   <TabsList className="bg-secondary w-full rounded-none">
                     <TabsTrigger value="about">About</TabsTrigger>
@@ -138,14 +138,12 @@ export default function Home() {
                     value="about"
                     className="px-8 pt-2 grid items-center justify-center"
                   >
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-3">
                       <div className="relative flex flex-col justify-end w-full">
-                        <h1 className="text-xl font-bold">
-                          {selectedProject.title}
-                        </h1>
-                        <p className="text-lg">{selectedProject.description}</p>
+                        <h1 className="font-bold">{selectedProject.title}</h1>
+                        <p className="">{selectedProject.description}</p>
                       </div>
-                      <div className="flex justify-center h-full items-center gap-2">
+                      <div className="flex flex-col sm:flex-row justify-center h-full items-center gap-4 sm:gap-2">
                         <Button variant="ghost">
                           <Link href={selectedProject.repo}>
                             <GitHubLogoIcon className="w-8 h-8" />
@@ -161,12 +159,13 @@ export default function Home() {
                       </div>
                     </div>
                   </TabsContent>
-                  <TabsContent value="technologies" className="pt-2 pb-2">
-                    <div className="flex gap-4 items-center relative justify-center">
+                  <TabsContent value="technologies" className="pt-2 pb-2 px-4">
+                    <div className="flex gap-4 items-center relative justify-center flex-wrap">
                       {selectedProject.technologies.map((tech) => (
                         <div key={tech} className="w-12 h-12 relative">
                           <Image
                             title={tech}
+                            sizes="25vh"
                             fill
                             alt={tech}
                             src={`/tech/icons/${tech}.svg`}
@@ -175,11 +174,8 @@ export default function Home() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent
-                    value="challenges"
-                    className="px-6"
-                  >
-                    <ScrollArea className="md:h-[100px] w-full">
+                  <TabsContent value="challenges" className="px-6">
+                    <ScrollArea className="md:h-[150px] w-full max-h-[150px]">
                       Lorem ipsum dolor sit amet, officia excepteur ex fugiat
                       reprehenderit enim labore culpa sint ad nisi Lorem
                       pariatur mollit ex esse exercitation amet. Nisi anim
