@@ -41,6 +41,8 @@ export default function Home() {
         <CardContent>
           <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[834/908] z-0 overflow-hidden object-center pr-2 md:pt-2">
             <Image
+              priority
+              sizes="50vh"
               src="/mascot/char_head.png"
               height={908}
               width={834}

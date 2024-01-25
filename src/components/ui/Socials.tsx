@@ -15,6 +15,7 @@ const Socials = () => {
           href="https://github.com/Yidaotus"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="GitHub"
         >
           <GitHubLogoIcon className="h-6 w-6" />
         </a>
@@ -25,6 +26,7 @@ const Socials = () => {
           href="https://medium.com/@yidaotus"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Medium Blog"
         >
           <MediumIcon size={6} />
         </a>
@@ -35,13 +37,14 @@ const Socials = () => {
           href="https://www.linkedin.com/in/voigtdaniel93/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="LinkedIn"
         >
           <LinkedInLogoIcon className="h-6 w-6" />
         </a>
       </Button>
 
       <Button variant="outline" size="logo" title="Email">
-        <a href="mailto:dvoigt1993@gmail.com">
+        <a href="mailto:dvoigt1993@gmail.com" aria-label="Email">
           <EnvelopeOpenIcon className="h-6 w-6" />
         </a>
       </Button>
@@ -52,7 +55,7 @@ const Socials = () => {
         aria-label="Download CV"
         title="Download my CV"
       >
-        <a href="/cv.pdf" download="cv.pdf">
+        <a href="/cv.pdf" download="cv.pdf" aria-label="Download CV">
           <IdCardIcon className="h-6 w-6" />
         </a>
       </Button>
