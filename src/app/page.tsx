@@ -42,7 +42,7 @@ export default function Home() {
           <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2/3 md:h-full aspect-[834/908] z-0 overflow-hidden object-center pr-2 md:pt-2">
             <Image
               priority
-              sizes="50vh"
+              sizes="25vh"
               src="/mascot/char_head.png"
               height={908}
               width={834}
@@ -153,7 +153,7 @@ export default function Home() {
         <CardContent className="text-muted-foreground flex gap-2 items-center justify-between">
           Just contact me!
           <Button variant="outline" size="logo" title="Email">
-            <a href="mailto:dvoigt1993@gmail.com">
+            <a href="mailto:dvoigt1993@gmail.com" aria-label="Email">
               <EnvelopeOpenIcon className="h-4 w-4" />
             </a>
           </Button>
