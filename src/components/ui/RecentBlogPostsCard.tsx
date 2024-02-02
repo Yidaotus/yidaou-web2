@@ -1,25 +1,20 @@
-import { cache } from "react";
-import { CardContent, CardDescription, CardHeader, CardTitle } from "./card";
-
 import Parser from "rss-parser";
 import { Separator } from "./separator";
 import Link from "next/link";
-import { Badge } from "./badge";
 import { Skeleton } from "./skeleton";
-import { QuoteIcon } from "@radix-ui/react-icons";
 
 const parser: Parser = new Parser();
 
 const BLOG_RSS_URL = "https://yidaotus.medium.com/feed";
 
-// const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const getRecentBlogPosts = cache(async (_ts: string) => {
-  const blogPostReq = await fetch(BLOG_RSS_URL);
+const getRecentBlogPosts = async () => {
+  const blogPostReq = await fetch(BLOG_RSS_URL, {
+    next: { revalidate: 3600 },
+  });
   const blogPostData = await blogPostReq.text();
   const blogPosts = await parser.parseString(blogPostData);
   return blogPosts;
-});
+};
 
 const BlogPostsPlaceHolder = () => (
   <div className="flex flex-col gap-4">
@@ -38,7 +33,7 @@ const BlogPostsPlaceHolder = () => (
 );
 
 const RecentBlockPosts = async () => {
-  const blogPosts = await getRecentBlogPosts(new Date().toLocaleDateString());
+  const blogPosts = await getRecentBlogPosts();
 
   return (
     <div className="flex flex-col space-y-2">
