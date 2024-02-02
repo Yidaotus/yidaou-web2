@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Homepage Preview](https://github.com/Yidaotus/yidaou-web2/blob/main/preview.png?raw=true)
+
+## My Homepage
+
+written in TypeScript using Gatsby. Feel free to clone!
 
 ## Getting Started
 
