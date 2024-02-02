@@ -2,7 +2,7 @@
 
 ## My Homepage
 
-written in TypeScript using Gatsby. Feel free to clone!
+written in TypeScript using NextJS. Feel free to clone!
 
 ## Getting Started
 
