@@ -27,6 +27,8 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export default function Home() {
+  const age = new Date().getFullYear() - 1993;
+
   return (
     <main className="m-auto p-2 grid gap-2 grid-cols-4 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen lg:gap-4 lg:max-h-[800px]">
       <Card className="col-span-4 relative overflow-hidden md:row-span-1 md:col-span-1">
@@ -54,7 +56,7 @@ export default function Home() {
             />
           </div>
           <p className="w-3/4 md:w-2/3 z-10 relative">
-            A 30-year-old residing and working independently in Düsseldorf as a
+            A {age}-year-old residing and working independently in Düsseldorf as a
             FullStack and Salesforce Software Developer. I&apos;ve been immersed
             in programming and tinkering for as long as I can remember,
             consistently seeking to acquire new skills. A devoted Rust

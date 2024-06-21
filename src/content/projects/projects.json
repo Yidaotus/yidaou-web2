@@ -66,6 +66,15 @@
     "challenges": "TBD"
   },
   {
+    "title": "Pomodoro App",
+    "description": "A simple pomodoro desktop app using tauri and react.",
+    "image": "yipomo.png",
+    "repo": "https://github.com/Yidaotus/YiPomo",
+    "link": null,
+    "technologies": ["rust", "tauri", "typescript"],
+    "challenges": "TBD"
+  },
+  {
     "title": "Yi-8",
     "description": "A very simple emulator for the CHIP-8 architecture.",
     "image": "yi8_preview.png",

@@ -30,6 +30,8 @@ import Image from "next/image";
 import { Suspense } from "react";
 
 export default function Home() {
+  const age = new Date().getFullYear() - 1993;
+
   return (
     <main className="m-auto p-2 grid gap-2 grid-cols-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:h-screen md:grid-cols-4 lg:gap-4 lg:max-h-[800px]">
       <Card className="col-span-2 row-span-2 md:col-span-4 lg:col-span-3 md:row-span-1 lg:row-span-1 relative">
@@ -51,9 +53,9 @@ export default function Home() {
             />
           </div>
           <p className="text-xl pr-24 z-10 relative">
-            Im <span className="font-bold">Daniel</span> 30 years old living and
-            working in Düsseldorf as an independent Full Stack and Salesforce
-            Software Developer.
+            Im <span className="font-bold">Daniel</span> {age} years old living
+            and working in Düsseldorf as an independent Full Stack and
+            Salesforce Software Developer.
           </p>
         </CardContent>
         <CardFooter>

@@ -92,7 +92,7 @@ export default function Home() {
         </motion.div>
       ))}
       <Card className="col-span-4 lg:col-span-1 lg:row-span-1"></Card>
-      <div className="col-span-4 lg:col-span-1 lg:row-span-1">
+      <div className="col-span-4 lg:col-span-3 lg:row-span-1">
         <GridButton
           title="Back"
           href="/"
